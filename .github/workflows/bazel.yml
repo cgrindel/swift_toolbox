@@ -6,11 +6,15 @@ on:
 
 jobs:
   macos_build:
-
     runs-on: macos-11.0
-
     steps:
+
     - uses: actions/checkout@v2
+
+    - name: Output the Bazel RC Files
+      shell: bash
+      run: |
+        cat .bazelrc
 
     - name: Output the Bazel Info
       shell: bash
@@ -24,5 +28,42 @@ jobs:
 
     - name: Build Anything Not Tested
       shell: bash
+      run: |
+        bazelisk build //... 
+
+
+  linux_build:
+    runs-on: ubuntu-18.04
+    steps:
+
+    - uses: actions/checkout@v2
+
+    # - name: DEBUG
+    #   shell: bash
+    #   run: |
+    #     which swift
+    #     which swift-autolink-extract
+
+    - name: Output the Bazel RC Files
+      shell: bash
+      run: |
+        cat .bazelrc
+
+    - name: Output the Bazel Info
+      shell: bash
+      run: |
+        bazelisk info
+
+    - name: Execute Tests
+      shell: bash
+      env:
+        CC: clang
+      run: |
+        bazelisk test //... --sandbox_debug
+
+    - name: Build Anything Not Tested
+      shell: bash
+      env:
+        CC: clang
       run: |
         bazelisk build //... 
