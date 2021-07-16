@@ -14,7 +14,7 @@ jobs:
     - name: Output the Bazel RC Files
       shell: bash
       run: |
-        cat .bazelrc && cat *.bazelrc
+        cat .bazelrc
 
     - name: Output the Bazel Info
       shell: bash
@@ -47,7 +47,7 @@ jobs:
     - name: Output the Bazel RC Files
       shell: bash
       run: |
-        cat .bazelrc && cat *.bazelrc
+        cat .bazelrc
 
     - name: Output the Bazel Info
       shell: bash
