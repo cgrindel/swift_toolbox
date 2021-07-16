@@ -1,0 +1,9 @@
+load("//build/swift:swift_test.bzl", "swift_test")
+
+swift_test(
+    name = "StringUtilsTests",
+    deps = [
+        "//Sources/StringUtils",
+        "//Sources/Truth",
+    ],
+)
