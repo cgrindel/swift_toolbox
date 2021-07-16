@@ -4,5 +4,5 @@ swift_library(
     name = "StringUtils",
     srcs = glob(["**/*.swift"]),
     module_name = "StringUtils",
-    visibility = ["//swift:__subpackages__"],
+    visibility = ["//visibility:public"],
 )

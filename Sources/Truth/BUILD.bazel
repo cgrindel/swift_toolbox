@@ -5,7 +5,7 @@ swift_library(
     testonly = 1,
     srcs = glob(["**/*.swift"]),
     module_name = "Truth",
-    visibility = ["//swift:__subpackages__"],
+    visibility = ["//visibility:public"],
     deps = [
         "//Sources/OptionalUtils",
         "//Sources/StringUtils",
