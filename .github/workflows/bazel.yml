@@ -33,16 +33,16 @@ jobs:
 
 
   linux_build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
 
     - uses: actions/checkout@v2
 
-    - name: DEBUG
-      shell: bash
-      run: |
-        which swift
-        which swift-autolink-extract
+    # - name: DEBUG
+    #   shell: bash
+    #   run: |
+    #     which swift
+    #     which swift-autolink-extract
 
     - name: Output the Bazel RC Files
       shell: bash
