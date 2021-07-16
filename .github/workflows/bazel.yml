@@ -6,10 +6,31 @@ on:
 
 jobs:
   macos_build:
-
     runs-on: macos-11.0
-
     steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Output the Bazel Info
+      shell: bash
+      run: |
+        bazelisk info
+
+    - name: Execute Tests
+      shell: bash
+      run: |
+        bazelisk test //... 
+
+    - name: Build Anything Not Tested
+      shell: bash
+      run: |
+        bazelisk build //... 
+
+
+  linux_build:
+    runs-on: ubuntu-latest
+    steps:
+
     - uses: actions/checkout@v2
 
     - name: Output the Bazel Info
