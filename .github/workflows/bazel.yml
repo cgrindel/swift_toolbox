@@ -40,10 +40,14 @@ jobs:
 
     - name: Execute Tests
       shell: bash
+      env:
+        CC=clang
       run: |
         bazelisk test //... 
 
     - name: Build Anything Not Tested
       shell: bash
+      env:
+        CC=clang
       run: |
         bazelisk build //... 
