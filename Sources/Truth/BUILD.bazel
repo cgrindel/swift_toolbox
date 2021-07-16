@@ -1,0 +1,13 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+swift_library(
+    name = "Truth",
+    testonly = 1,
+    srcs = glob(["**/*.swift"]),
+    module_name = "Truth",
+    visibility = ["//swift:__subpackages__"],
+    deps = [
+        "//Sources/OptionalUtils",
+        "//Sources/StringUtils",
+    ],
+)
