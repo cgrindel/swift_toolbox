@@ -1,0 +1,32 @@
+# Verbose Failures
+build --verbose_failures
+
+# Strict PATH. Helps prevent build cache invalidation due to PATH differences.
+build --incompatible_strict_action_env=true
+
+# Bazelrc Settings for Swift
+
+# Suggestion from https://github.com/ios-bazel-users/ios-bazel-users/blob/master/UsefulFlags.md
+
+# Faster build because each invocation can share the same cache.
+build --features=swift.use_global_module_cache
+
+# Suggestions from https://speakerdeck.com/brentleyjones/using-bazel-for-ios-development?slide=27
+
+# Don't generate Objective-C interface headers
+build --features=swift.no_generated_header
+
+# Enable whole module optimization
+build --features=swift.opt_uses_wmo
+build --swiftcopt=-whole-module-optimization
+
+# LLDB, but also cachability
+build --features=debug_prefix_map_pwd_is_dot
+
+# From https://github.com/bazelbuild/rules_swift/issues/398 and
+# https://github.com/TelegramMessenger/Telegram-iOS/blob/master/.bazelrc
+
+build --features=swift.cacheable_swiftmodules
+build --features=swift.debug_prefix_map
+build --features=swift.enable_vfsoverlays
+

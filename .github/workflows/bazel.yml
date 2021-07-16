@@ -43,7 +43,7 @@ jobs:
       env:
         CC: clang
       run: |
-        bazelisk test //... 
+        bazelisk test //... --sandbox_debug
 
     - name: Build Anything Not Tested
       shell: bash
