@@ -1,0 +1,9 @@
+load("//build/swift:swift_test.bzl", "swift_test")
+
+swift_test(
+    name = "TypeUtilsTests",
+    deps = [
+        "//Sources/TypeUtils",
+        "@cgrindel_swift_toolbox//Sources/Truth",
+    ],
+)
