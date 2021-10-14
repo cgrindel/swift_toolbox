@@ -2,44 +2,44 @@ import Foundation
 
 // MARK: - TimeInterval Creation Helpers
 
-extension BinaryInteger {
-  public var milliseconds: TimeInterval {
+public extension BinaryInteger {
+  var milliseconds: TimeInterval {
     return TimeInterval(self) / 1000
   }
 
-  public var millisecond: TimeInterval {
+  var millisecond: TimeInterval {
     return milliseconds
   }
 
-  public var seconds: TimeInterval {
+  var seconds: TimeInterval {
     return TimeInterval(self)
   }
 
-  public var second: TimeInterval {
+  var second: TimeInterval {
     return seconds
   }
 
-  public var minutes: TimeInterval {
+  var minutes: TimeInterval {
     return TimeInterval(self) * 60
   }
 
-  public var minute: TimeInterval {
+  var minute: TimeInterval {
     return minutes
   }
 
-  public var hours: TimeInterval {
+  var hours: TimeInterval {
     return (self * 60).minutes
   }
 
-  public var hour: TimeInterval {
+  var hour: TimeInterval {
     return hours
   }
 
-  public var days: TimeInterval {
+  var days: TimeInterval {
     return (self * 24).hours
   }
 
-  public var day: TimeInterval {
+  var day: TimeInterval {
     return days
   }
 }

@@ -1,8 +1,8 @@
 import Foundation
 
-extension Subject where T: BinaryInteger {
+public extension Subject where T: BinaryInteger {
   /// Asserts that the actual value is less than the expected value.
-  @discardableResult public func isLessThan(
+  @discardableResult func isLessThan(
     _ expected: T,
     file: StaticString = #file,
     line: UInt = #line
@@ -20,7 +20,7 @@ extension Subject where T: BinaryInteger {
   }
 
   /// Asserts that the actual value is greater than the expected value.
-  @discardableResult public func isGreaterThan(
+  @discardableResult func isGreaterThan(
     _ expected: T,
     file: StaticString = #file,
     line: UInt = #line

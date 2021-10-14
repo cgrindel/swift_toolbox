@@ -9,7 +9,9 @@ class StringAssertionsTests: XCTestCase {
 
   func test_contains_Fail() {
     let substring = "does not exist"
-    assertFailure([Fact("expected to contain", substring)]) { $0.that(actual).contains(substring) }
+    assertFailure([Fact("expected to contain", substring)]) {
+      $0.that(actual).contains(substring)
+    }
   }
 
   func test_matches_Success() throws {

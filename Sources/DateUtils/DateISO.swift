@@ -43,14 +43,14 @@ public enum DateStringFormatError: Error, Equatable {
   case invalidFormat(invalidValue: String)
 }
 
-extension Date {
+public extension Date {
   /// Creates a string representing this date in the specified format.
-  public func toString(_ format: DateStringFormat = .isoWithMillis) -> String {
+  func toString(_ format: DateStringFormat = .isoWithMillis) -> String {
     return format.formatter.string(from: self)
   }
 
   /// Normalize the date value so that it matches the precision of the selected format.
-  public func normalized(for format: DateStringFormat = .isoWithMillis) -> Date {
+  func normalized(for format: DateStringFormat = .isoWithMillis) -> Date {
     // NOTE: It is possible to safely force try because we are restricting the format to a set of
     // known formats that should not fail unless something is very wrong. If custom formats are
     // allowed, then this force try should be revisited.
@@ -61,12 +61,12 @@ extension Date {
   }
 }
 
-extension String {
-  public func toDate(_ format: DateStringFormat = .isoWithMillis) -> Date? {
+public extension String {
+  func toDate(_ format: DateStringFormat = .isoWithMillis) -> Date? {
     return format.formatter.date(from: self)
   }
 
-  public func tryToDate(_ format: DateStringFormat = .isoWithMillis) throws -> Date {
+  func tryToDate(_ format: DateStringFormat = .isoWithMillis) throws -> Date {
     guard let date = toDate(format) else {
       throw DateStringFormatError.invalidFormat(invalidValue: self)
     }

@@ -5,8 +5,8 @@ enum DataStringConversionError: Error {
   case failedToConvertStringToData(String.Encoding)
 }
 
-extension Data {
-  public func toString(using encoding: String.Encoding = .utf8) throws -> String {
+public extension Data {
+  func toString(using encoding: String.Encoding = .utf8) throws -> String {
     guard let result = String(data: self, encoding: encoding) else {
       throw DataStringConversionError.failedToConvertDataToString(encoding)
     }
@@ -14,8 +14,8 @@ extension Data {
   }
 }
 
-extension String {
-  public func toData(using encoding: String.Encoding = .utf8) throws -> Data {
+public extension String {
+  func toData(using encoding: String.Encoding = .utf8) throws -> Data {
     guard let result = data(using: encoding) else {
       throw DataStringConversionError.failedToConvertStringToData(encoding)
     }

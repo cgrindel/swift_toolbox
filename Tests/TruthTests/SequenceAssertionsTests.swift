@@ -10,7 +10,8 @@ class SequenceAssertionsTests: XCTestCase {
   func test_contains_Failure() {
     let actual = [1, 2, 3]
     let expected = 4
-    assertFailure([Fact("expected to contain", expected)]) { $0.that(actual).contains(expected) }
+    assertFailure([Fact("expected to contain", expected)]) { $0.that(actual).contains(expected)
+    }
   }
 
   func test_contains_WithTwoMissing_Failure() {

@@ -1,9 +1,8 @@
-load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+load("//build/swift:swift_library.bzl", "swift_library")
 
 swift_library(
     name = "Truth",
     testonly = 1,
-    srcs = glob(["**/*.swift"]),
     module_name = "Truth",
     visibility = ["//visibility:public"],
     deps = [

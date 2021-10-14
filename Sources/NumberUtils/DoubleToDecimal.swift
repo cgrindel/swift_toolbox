@@ -1,7 +1,7 @@
 import Foundation
 
-extension Double {
-  public var decimalValue: Decimal {
+public extension Double {
+  var decimalValue: Decimal {
     return Decimal(self)
   }
 }

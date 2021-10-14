@@ -1,6 +1,6 @@
-extension Subject where T: Comparable {
+public extension Subject where T: Comparable {
   /// Asserts that the actual value is in the specified range.
-  @discardableResult public func isIn(
+  @discardableResult func isIn(
     _ range: Range<T>,
     file: StaticString = #file,
     line: UInt = #line
@@ -18,7 +18,7 @@ extension Subject where T: Comparable {
   }
 
   /// Asserts that the actual value is in the specified range.
-  @discardableResult public func isIn(
+  @discardableResult func isIn(
     _ range: ClosedRange<T>,
     file: StaticString = #file,
     line: UInt = #line

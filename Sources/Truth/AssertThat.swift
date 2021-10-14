@@ -36,9 +36,9 @@ public func assertThat<T>(
   return ThrowsSubject(failureStrategy: failureStrategy, expression: expression)
 }
 
-extension XCTestCase {
+public extension XCTestCase {
   /// Return a subject for the target.
-  public func assertThat<T>(_ actual: T, with customMessage: MessageClosure? = nil) -> Subject<T> {
+  func assertThat<T>(_ actual: T, with customMessage: MessageClosure? = nil) -> Subject<T> {
     return Truth.assertThat(actual, using: failureStrategy, with: customMessage)
   }
 
@@ -46,7 +46,7 @@ extension XCTestCase {
   // wanting to perform a number of assertions on a single subject. This avoids massive compilation
   // times when chaining assertions.
   @discardableResult
-  public func assertThat<T>(
+  func assertThat<T>(
     _ actual: T,
     with customMessage: MessageClosure? = nil,
     _ consumer: (Subject<T>) -> Void
@@ -55,7 +55,7 @@ extension XCTestCase {
   }
 
   /// Return a subject for the throwable expression.
-  public func assertThat<T>(
+  func assertThat<T>(
     expression: @escaping () throws -> T
   ) -> ThrowsSubject<T> {
     return Truth.assertThat(using: failureStrategy, expression)
@@ -64,9 +64,9 @@ extension XCTestCase {
 
 // MARK: - Helpers for Child Subjects
 
-extension BaseSubject {
+public extension BaseSubject {
   /// Returns a Subject for the provided value using this instance's failure strategy.
-  public func that<T>(_ actual: T) -> Subject<T> {
+  func that<T>(_ actual: T) -> Subject<T> {
     return Subject(
       actual: actual,
       failureStrategy: failureStrategy,
@@ -76,7 +76,7 @@ extension BaseSubject {
   }
 
   /// Returns a Subject for the provided expression using this instance's failure strategy.
-  public func that<T>(
+  func that<T>(
     expression: @escaping ThrowsSubject<T>.ThrowableFn
   ) -> ThrowsSubject<T> {
     return ThrowsSubject(

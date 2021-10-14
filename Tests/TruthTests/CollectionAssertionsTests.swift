@@ -11,7 +11,10 @@ class CollectionAssertionsTests: XCTestCase {
   func test_hasCount_Failure() {
     let actual = [1, 2, 3]
     let expected = actual.count + 1
-    assertFailure([Fact("expected to have count of", expected), Fact("but was", actual.count)]) {
+    assertFailure([
+      Fact("expected to have count of", expected),
+      Fact("but was", actual.count),
+    ]) {
       $0.that(actual).hasCount(expected)
     }
   }
@@ -53,7 +56,10 @@ class CollectionAssertionsTests: XCTestCase {
   func test_itemAt_WithValidInvalidIndex() {
     let actual = [1, 2, 3]
     let index = 3
-    assertFailure([Fact("expected index to be valid for the collection"), Fact("but was", index)]) {
+    assertFailure([
+      Fact("expected index to be valid for the collection"),
+      Fact("but was", index),
+    ]) {
       $0.that(actual).item(at: index) { _ in
         XCTFail("The element subject should not have been called.")
       }

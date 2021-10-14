@@ -1,0 +1,16 @@
+load("@bazel_skylib//:bzl_library.bzl", "bzl_library")
+load(
+    "@cgrindel_rules_swiftformat//swiftformat:swiftformat.bzl",
+    "swiftformat_update_all",
+)
+
+bzl_library(
+    name = "deps",
+    srcs = ["deps.bzl"],
+)
+
+exports_files([".swiftformat"])
+
+swiftformat_update_all(
+    name = "update_all",
+)

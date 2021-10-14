@@ -41,7 +41,10 @@ class DecimalCSVFormatTests: XCTestCase {
   }
 
   func test_codability_OfDecimal() throws {
-    let foo = Foo(decimal: Double.random(in: -90 ... 90).decimalValue.roundTo(decimalPlaces: 10))
+    let foo = Foo(
+      decimal: Double.random(in: -90 ... 90).decimalValue
+        .roundTo(decimalPlaces: 10)
+    )
     let data = try JSONEncoder().encode(foo)
     let result = try JSONDecoder().decode(Foo.self, from: data)
     assertThat(result).isEqualTo(foo)

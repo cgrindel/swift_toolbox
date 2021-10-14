@@ -1,8 +1,8 @@
-extension String {
+public extension String {
   // Lovingly inspired by https://stackoverflow.com/questions/26845307/generate-random-alphanumeric-string-in-swift
 
   /// Specifies the type of random string that should be generated.
-  public enum RandomStringMode {
+  enum RandomStringMode {
     case upperAlpha
     case lowerAlpha
     case upperAlphaNumeric
@@ -30,7 +30,7 @@ extension String {
   }
 
   /// Generates a random string with the specified length and the specified contents.
-  public static func random(length: Int, mode: RandomStringMode) -> String {
+  static func random(length: Int, mode: RandomStringMode) -> String {
     return String((0 ..< length).map { _ in mode.letters.randomElement()! })
   }
 }

@@ -62,7 +62,8 @@ class ThrowsAssertionsTests: XCTestCase {
   func test_doesThrow_WithErrorConsumerThrowingError() throws {
     assertFailure([.unexpectedTestError]) {
       // We are testing that an error that occurs in the error consumer is handled properly
-      $0.that { throw TestError.foo }.doesThrow { _ in throw AssertionConsumerError.testError }
+      $0.that { throw TestError.foo }
+        .doesThrow { _ in throw AssertionConsumerError.testError }
     }
   }
 

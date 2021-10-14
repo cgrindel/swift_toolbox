@@ -39,23 +39,38 @@ class EquatableAssertionsTests: XCTestCase {
     /// Determine if the two instances are equal.
     static func == (lhs: Foo, rhs: Foo) -> Bool {
       return true &&
-        (lhs.skipIntProperty || rhs.skipOptIntProperty || lhs.intProperty == rhs.intProperty) &&
+        (
+          lhs.skipIntProperty || rhs.skipOptIntProperty || lhs.intProperty == rhs
+            .intProperty
+        ) &&
         (
           lhs.skipOptIntProperty || rhs.skipOptIntProperty ||
             lhs.optIntProperty == rhs.optIntProperty
         ) &&
-        (lhs.skipBoolProperty || rhs.skipBoolProperty || lhs.boolProperty == rhs.boolProperty) &&
-        (lhs.skipStrProperty || rhs.skipStrProperty || lhs.strProperty == rhs.strProperty) &&
+        (
+          lhs.skipBoolProperty || rhs.skipBoolProperty || lhs.boolProperty == rhs
+            .boolProperty
+        ) &&
+        (
+          lhs.skipStrProperty || rhs.skipStrProperty || lhs.strProperty == rhs
+            .strProperty
+        ) &&
         (
           lhs.skipOptStrProperty || rhs.skipOptStrProperty ||
             lhs.optStrProperty == rhs.optStrProperty
         ) &&
-        (lhs.skipDateProperty || rhs.skipDateProperty || lhs.dateProperty == rhs.dateProperty) &&
+        (
+          lhs.skipDateProperty || rhs.skipDateProperty || lhs.dateProperty == rhs
+            .dateProperty
+        ) &&
         (
           lhs.skipOptDateProperty || rhs.skipOptDateProperty ||
             lhs.optDateProperty == rhs.optDateProperty
         ) &&
-        (lhs.skipUUIDProperty || rhs.skipUUIDProperty || lhs.uuidProperty == rhs.uuidProperty) &&
+        (
+          lhs.skipUUIDProperty || rhs.skipUUIDProperty || lhs.uuidProperty == rhs
+            .uuidProperty
+        ) &&
         (
           lhs.skipOptUUIDProperty || rhs.skipOptUUIDProperty ||
             lhs.optUUIDProperty == rhs.optUUIDProperty
@@ -320,7 +335,8 @@ class EquatableAssertionsTests: XCTestCase {
   func test_isNotEqualTo_WithDifferent_OptionalDate_Fail() {
     do_isNotEqualTo_withDifferent_Fail(
       \.optDateProperty,
-      IsNotEqualWithDifferentValues.date + IsNotEqualWithDifferentValues.timeIntervalIncrement,
+      IsNotEqualWithDifferentValues.date + IsNotEqualWithDifferentValues
+        .timeIntervalIncrement,
       \.skipOptDateProperty
     ) { subject, expected in
       subject.isNotEqualTo(expected, withDifferent: \.optDateProperty)

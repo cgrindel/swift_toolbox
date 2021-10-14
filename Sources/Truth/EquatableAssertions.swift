@@ -1,8 +1,8 @@
 import Foundation
 
-extension Subject where T: Equatable {
+public extension Subject where T: Equatable {
   /// Asserts that the actual value is equal to the expected value.
-  @discardableResult public func isEqualTo(
+  @discardableResult func isEqualTo(
     _ expected: T,
     file: StaticString = #file,
     line: UInt = #line
@@ -20,7 +20,7 @@ extension Subject where T: Equatable {
   }
 
   /// Asserts that the actual value is not equal to the expected value.
-  @discardableResult public func isNotEqualTo(
+  @discardableResult func isNotEqualTo(
     _ expected: T,
     file: StaticString = #file,
     line: UInt = #line
@@ -39,7 +39,7 @@ extension Subject where T: Equatable {
 
 // MARK: - isNotEqualTo(:when:is:file:line:) and isNotEqualTo(:withDifferent:file:line:)
 
-struct IsNotEqualWithDifferentValues {
+enum IsNotEqualWithDifferentValues {
   static let uuid = UUID()
   static let date = Date()
   static let timeIntervalIncrement = TimeInterval(1)
@@ -47,13 +47,13 @@ struct IsNotEqualWithDifferentValues {
   static let strSuffix = "NOT EQUAL"
 }
 
-extension Subject where T: Equatable, T: AnyObject {
+public extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the actual value is not equal to the expected value when the specified key is
   /// changed to the specified value. The expected value is changed for the assertion and then put
   /// back to its original value.
   ///
   /// This assertion is useful when testing custom equality implementations.
-  @discardableResult public func isNotEqualTo<Value>(
+  @discardableResult func isNotEqualTo<Value>(
     _ expected: T,
     when keyPath: ReferenceWritableKeyPath<T, Value>,
     is newValue: Value,
@@ -84,7 +84,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (optional Numeric) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo<Value: Numeric>(
+  @discardableResult func isNotEqualTo<Value: Numeric>(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, Value?>,
     file: StaticString = #file,
@@ -98,7 +98,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (Numeric) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo<Value: Numeric>(
+  @discardableResult func isNotEqualTo<Value: Numeric>(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, Value>,
     file: StaticString = #file,
@@ -112,7 +112,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (Bool) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo(
+  @discardableResult func isNotEqualTo(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, Bool>,
     file: StaticString = #file,
@@ -126,7 +126,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (String) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo(
+  @discardableResult func isNotEqualTo(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, String>,
     file: StaticString = #file,
@@ -140,7 +140,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (optional String) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo(
+  @discardableResult func isNotEqualTo(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, String?>,
     file: StaticString = #file,
@@ -154,7 +154,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (optional UUID) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo(
+  @discardableResult func isNotEqualTo(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, UUID>,
     file: StaticString = #file,
@@ -167,7 +167,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (UUID) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo(
+  @discardableResult func isNotEqualTo(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, UUID?>,
     file: StaticString = #file,
@@ -180,7 +180,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (optional Date) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo(
+  @discardableResult func isNotEqualTo(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, Date>,
     file: StaticString = #file,
@@ -194,7 +194,7 @@ extension Subject where T: Equatable, T: AnyObject {
   /// Asserts that the expected value is not equal to the actual when the key at the specified key
   /// path (Date) is changed. The expected value is changed for the assertion and the
   /// put back to its original value.
-  @discardableResult public func isNotEqualTo(
+  @discardableResult func isNotEqualTo(
     _ expected: T,
     withDifferent keyPath: ReferenceWritableKeyPath<T, Date?>,
     file: StaticString = #file,
@@ -209,8 +209,8 @@ extension Subject where T: Equatable, T: AnyObject {
 
 // MARK: - isIn a Sequence
 
-extension Subject where T: Equatable {
-  @discardableResult public func isIn<S: Sequence>(
+public extension Subject where T: Equatable {
+  @discardableResult func isIn<S: Sequence>(
     _ sequence: S,
     file: StaticString = #file,
     line: UInt = #line

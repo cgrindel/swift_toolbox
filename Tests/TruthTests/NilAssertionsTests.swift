@@ -11,7 +11,9 @@ class NilAssertionsTests: XCTestCase {
 
   func test_isNil_Fails() {
     actual = 123
-    assertFailure([Fact("expected to be nil"), Fact("but was", actual)]) { $0.that(actual).isNil() }
+    assertFailure([Fact("expected to be nil"), Fact("but was", actual)]) {
+      $0.that(actual).isNil()
+    }
   }
 
   func test_isNotNil_WithoutClosure_Succeeds() {
