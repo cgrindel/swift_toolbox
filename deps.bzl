@@ -10,7 +10,9 @@ def swift_toolbox_dependencies():
     )
 
     maybe(
-        native.local_repository,
+        http_archive,
         name = "cgrindel_rules_swiftformat",
-        path = "../rules_swiftformat",
+        sha256 = "4942ca4f8f88d926964c7ff9c449c5c7eb2e0f1059675d16f75ea57bfdebb504",
+        strip_prefix = "rules_swiftformat-0.1.0",
+        urls = ["https://github.com/cgrindel/rules_swiftformat/archive/v0.1.0.tar.gz"],
     )
