@@ -17,3 +17,7 @@ load(
 )
 
 swift_rules_extra_dependencies()
+
+load("@cgrindel_rules_swiftformat//swiftformat:deps.bzl", "swiftformat_rules_dependencies")
+
+swiftformat_rules_dependencies()
