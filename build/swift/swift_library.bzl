@@ -9,7 +9,7 @@ def swift_library(name, srcs = None, **kwargs):
 
     swiftformat_library(
         name = name,
-        swiftformat_config = "//.swiftformat",
+        swiftformat_config = "//:.swiftformat",
         srcs = srcs,
         **kwargs
     )

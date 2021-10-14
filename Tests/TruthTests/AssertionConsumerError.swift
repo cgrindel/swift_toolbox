@@ -1,11 +1,11 @@
 import Truth
 
 enum AssertionConsumerError: Error {
-  case testError
+    case testError
 }
 
 public extension Fact {
-  static var unexpectedTestError: Fact {
-    return .unexpectedError(AssertionConsumerError.testError)
-  }
+    static var unexpectedTestError: Fact {
+        return .unexpectedError(AssertionConsumerError.testError)
+    }
 }

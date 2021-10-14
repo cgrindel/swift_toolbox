@@ -12,32 +12,32 @@ enum LengthConversions {
 
 // MARK: - Meter-Kilometer
 
-extension Meter {
-  public var metersToKilometers: Kilometers {
+public extension Meter {
+  var metersToKilometers: Kilometers {
     return self / LengthConversions.metersPerKilometer
   }
 }
 
-extension Kilometers {
-  public var kilometersToMeters: Meter {
+public extension Kilometers {
+  var kilometersToMeters: Meter {
     return self * LengthConversions.metersPerKilometer
   }
 }
 
 // MARK: - Degree-Radian
 
-extension Double {
+public extension Double {
   // Inspired by:
   //   https://www.hackingwithswift.com/example-code/language/how-to-convert-degrees-to-radians
   //   https://www.varsitytutors.com/hotmath/hotmath_help/topics/degree-to-radian-measure
 
   /// Convert degrees to radians.
-  public var degreesToRadians: Radians {
+  var degreesToRadians: Radians {
     return self * LengthConversions.radiansPerDegree
   }
 
   /// Convert radians to degrees
-  public var radiansToDegrees: Degree {
+  var radiansToDegrees: Degree {
     return (self * LengthConversions.degreesPerRadian)
       .decimalValue
       // Selected 10 decimal places as that seems to be the max number of decimal places to which
@@ -46,32 +46,32 @@ extension Double {
   }
 }
 
-extension Degree {
-  public var degreesToRadians: Radians {
+public extension Degree {
+  var degreesToRadians: Radians {
     return doubleValue.degreesToRadians
   }
 }
 
 // MARK: - Feet-Kilometers
 
-extension Feet {
-  public var feetToMeters: Meter {
+public extension Feet {
+  var feetToMeters: Meter {
     return self / LengthConversions.feetPerMeter
   }
 
-  public var feetToKilometers: Kilometers {
+  var feetToKilometers: Kilometers {
     return feetToMeters.metersToKilometers
   }
 }
 
-extension Meter {
-  public var metersToFeet: Feet {
+public extension Meter {
+  var metersToFeet: Feet {
     return self * LengthConversions.feetPerMeter
   }
 }
 
-extension Kilometers {
-  public var kilometersToFeet: Feet {
+public extension Kilometers {
+  var kilometersToFeet: Feet {
     return kilometersToMeters.metersToFeet
   }
 }

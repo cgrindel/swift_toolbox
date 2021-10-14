@@ -30,16 +30,16 @@ public struct EquatableFailure: Equatable {
   }
 }
 
-extension Failure {
+public extension Failure {
   /// Returns an instance that can be used in comparisons.
-  public func asEquatable() -> EquatableFailure {
+  func asEquatable() -> EquatableFailure {
     return EquatableFailure(message: message, file: file.toString(), line: line)
   }
 }
 
-extension Collection where Element == Failure {
+public extension Collection where Element == Failure {
   /// Returns an array of equatable failures that is suitable for direct comparison.
-  public func asEquatable() -> [EquatableFailure] {
+  func asEquatable() -> [EquatableFailure] {
     return map { $0.asEquatable() }
   }
 }

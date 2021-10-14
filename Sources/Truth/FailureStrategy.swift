@@ -8,9 +8,9 @@ public protocol FailureStrategy {
   func fail(_ message: String, file: StaticString, line: UInt)
 }
 
-extension FailureStrategy {
+public extension FailureStrategy {
   /// Log a failure from an instance of a failure.
-  public func fail(with failure: Failure) {
+  func fail(with failure: Failure) {
     fail(failure.message, file: failure.file, line: failure.line)
   }
 }
@@ -48,7 +48,7 @@ public protocol FailureStrategyProvider {
 }
 
 extension XCTestCase: FailureStrategyProvider {
-  private struct FailureStrategyHolder {
+  private enum FailureStrategyHolder {
     static var current: FailureStrategy = DefaultFailureStrategy()
   }
 

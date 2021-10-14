@@ -24,9 +24,9 @@ public class WhenTesting {
 
 public typealias WhenTestingConsumer = (WhenTesting) -> Void
 
-extension XCTestCase {
+public extension XCTestCase {
   /// Used for testing Truth assertions. Captures assertions made inside the
-  public func expectFailure(_ consumer: WhenTestingConsumer) -> [Failure] {
+  func expectFailure(_ consumer: WhenTestingConsumer) -> [Failure] {
     let whenTesting = WhenTesting()
     let originalFailureStrategy = failureStrategy
     defer { self.failureStrategy = originalFailureStrategy }
@@ -38,7 +38,7 @@ extension XCTestCase {
   }
 
   /// Used for testing Truth assertions. Do not use in other types of tests.
-  public func assertNoFailures(
+  func assertNoFailures(
     file: StaticString = #file,
     line: UInt = #line,
     _ closure: WhenTestingConsumer
@@ -50,7 +50,7 @@ extension XCTestCase {
   }
 
   /// Used for testing Truth assertions. Do not use in other types of tests.
-  public func assertFailure(
+  func assertFailure(
     _ expectedFailFacts: [Fact]? = nil,
     file: StaticString = #file,
     line: UInt = #line,

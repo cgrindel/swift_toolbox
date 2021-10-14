@@ -1,8 +1,8 @@
 import Foundation
-extension Subject where T == Decimal {
+public extension Subject where T == Decimal {
   // MARK: - isNaN
 
-  @discardableResult public func isNaN(
+  @discardableResult func isNaN(
     file: StaticString = #file,
     line: UInt = #line
   ) -> Self {
@@ -18,7 +18,7 @@ extension Subject where T == Decimal {
     }
   }
 
-  @discardableResult public func isNotNaN(
+  @discardableResult func isNotNaN(
     file: StaticString = #file,
     line: UInt = #line
   ) -> Self {
@@ -35,7 +35,7 @@ extension Subject where T == Decimal {
 
   // MARK: - isCloseTo
 
-  @discardableResult public func isCloseTo(
+  @discardableResult func isCloseTo(
     _ expected: T,
     plusOrMinus: Decimal,
     file: StaticString = #file,
@@ -57,7 +57,7 @@ extension Subject where T == Decimal {
   }
 
   /// Asserts that the value is equal within a specified percentage.
-  @discardableResult public func isCloseTo(
+  @discardableResult func isCloseTo(
     _ expected: T,
     within percentage: Decimal,
     file: StaticString = #file,
@@ -71,7 +71,7 @@ extension Subject where T == Decimal {
   // MARK: - isLessThan / isGreaterThan
 
   /// Asserts that the actual value is less than the expected value.
-  @discardableResult public func isLessThan(
+  @discardableResult func isLessThan(
     _ expected: T,
     file: StaticString = #file,
     line: UInt = #line
@@ -89,7 +89,7 @@ extension Subject where T == Decimal {
   }
 
   /// Asserts that the actual value is greater than the expected value.
-  @discardableResult public func isGreaterThan(
+  @discardableResult func isGreaterThan(
     _ expected: T,
     file: StaticString = #file,
     line: UInt = #line

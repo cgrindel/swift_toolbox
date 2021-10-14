@@ -21,3 +21,11 @@ swift_rules_extra_dependencies()
 load("@cgrindel_rules_swiftformat//swiftformat:deps.bzl", "swiftformat_rules_dependencies")
 
 swiftformat_rules_dependencies()
+
+load("@cgrindel_rules_spm//spm:deps.bzl", "spm_rules_dependencies")
+
+spm_rules_dependencies()
+
+load("@cgrindel_rules_swiftformat//swiftformat:load_package.bzl", "swiftformat_load_package")
+
+swiftformat_load_package()
