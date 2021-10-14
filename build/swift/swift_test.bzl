@@ -9,6 +9,7 @@ def swift_test(name, srcs = None, **kwargs):
 
     swiftformat_test(
         name = name,
+        swiftformat_config = "//:.swiftformat",
         srcs = srcs,
         **kwargs
     )

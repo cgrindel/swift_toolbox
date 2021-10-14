@@ -2,8 +2,8 @@ import Truth
 import XCTest
 
 class StaticStringTests: XCTestCase {
-    func testSomething() {
-        let staticString: StaticString = "foo"
-        assertThat(staticString.toString()).isEqualTo("foo")
-    }
+  func testSomething() {
+    let staticString: StaticString = "foo"
+    assertThat(staticString.toString()).isEqualTo("foo")
+  }
 }
