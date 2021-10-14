@@ -2,7 +2,6 @@ load("//build/swift:swift_library.bzl", "swift_library")
 
 swift_library(
     name = "StringUtils",
-    srcs = glob(["**/*.swift"]),
     module_name = "StringUtils",
     visibility = ["//visibility:public"],
 )
