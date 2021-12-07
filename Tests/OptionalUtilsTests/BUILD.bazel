@@ -1,3 +1,4 @@
+load("@cgrindel_rules_bzlformat//bzlformat:bzlformat.bzl", "bzlformat_pkg")
 load("//build/swift:swift_test.bzl", "swift_test")
 
 swift_test(
@@ -7,3 +8,5 @@ swift_test(
         "//Sources/Truth",
     ],
 )
+
+bzlformat_pkg(name = "bzlformat")
