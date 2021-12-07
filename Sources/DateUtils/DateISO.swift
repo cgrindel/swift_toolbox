@@ -2,9 +2,7 @@ import Foundation
 
 enum DateISOFormatters {
   /// Formatter for ISO without millis
-  public static var iso = {
-    ISO8601DateFormatter()
-  }()
+  public static var iso = ISO8601DateFormatter()
 
   /// Formatter for ISO with millis
   public static var isoWithMillis: ISO8601DateFormatter = {

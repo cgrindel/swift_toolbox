@@ -5,10 +5,10 @@ class ResultAssertionsTests: XCTestCase {
   struct TestError: Error, Equatable {}
 
   let successValue = 1234
-  lazy var success: Result<Int, TestError> = { .success(successValue) }()
+  lazy var success: Result<Int, TestError> = .success(successValue)
 
   let testError = TestError()
-  lazy var failure: Result<Int, TestError> = { .failure(testError) }()
+  lazy var failure: Result<Int, TestError> = .failure(testError)
 
   func test_isSuccess_WithoutClosure_Success() {
     assertNoFailures { $0.that(success).isSuccess() }

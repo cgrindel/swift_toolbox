@@ -1,3 +1,4 @@
+load("@cgrindel_rules_bzlformat//bzlformat:bzlformat.bzl", "bzlformat_pkg")
 load("//build/swift:swift_library.bzl", "swift_library")
 
 swift_library(
@@ -10,3 +11,5 @@ swift_library(
         "//Sources/StringUtils",
     ],
 )
+
+bzlformat_pkg(name = "bzlformat")

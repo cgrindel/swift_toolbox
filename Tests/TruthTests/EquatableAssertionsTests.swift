@@ -10,25 +10,25 @@ class EquatableAssertionsTests: XCTestCase {
     var skipOptIntProperty = false
 
     static var defaultBoolValue = false
-    lazy var boolProperty: Bool = { Self.defaultBoolValue }()
+    lazy var boolProperty: Bool = Self.defaultBoolValue
     var skipBoolProperty = false
 
     static var defaultStrValue = ""
-    lazy var strProperty: String = { Self.defaultStrValue }()
+    lazy var strProperty: String = Self.defaultStrValue
     var skipStrProperty = false
 
     var optStrProperty: String?
     var skipOptStrProperty = false
 
     static let defaultDateValue = Date()
-    lazy var dateProperty: Date = { Self.defaultDateValue }()
+    lazy var dateProperty: Date = Self.defaultDateValue
     var skipDateProperty = false
 
     var optDateProperty: Date?
     var skipOptDateProperty = false
 
     static let defaultUUIDValue = UUID()
-    lazy var uuidProperty: UUID = { Self.defaultUUIDValue }()
+    lazy var uuidProperty: UUID = Self.defaultUUIDValue
     var skipUUIDProperty = false
 
     var optUUIDProperty: UUID?
