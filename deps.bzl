@@ -10,11 +10,9 @@ def swift_toolbox_dependencies():
     )
 
     maybe(
-        http_archive,
-        name = "cgrindel_rules_bzlformat",
-        sha256 = "44b09ad9c5395760065820676ba6e65efec08ae02c1ce7e2d39d42c5b1e7aec8",
-        strip_prefix = "rules_bzlformat-0.2.1",
-        urls = ["https://github.com/cgrindel/rules_bzlformat/archive/v0.2.1.tar.gz"],
+        native.local_repository,
+        name = "cgrindel_bazel_starlib",
+        path = "../bazel-starlib",
     )
 
     maybe(
