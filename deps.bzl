@@ -9,10 +9,13 @@ def swift_toolbox_dependencies():
         url = "https://github.com/bazelbuild/rules_swift/releases/download/0.24.0/rules_swift.0.24.0.tar.gz",
     )
 
-    maybe(
-        native.local_repository,
+    http_archive(
         name = "cgrindel_bazel_starlib",
-        path = "../bazel-starlib",
+        sha256 = "238c05abf31447b93bd15b616c7413c4c719ee7b5e81c1489ca20f02ce628489",
+        strip_prefix = "bazel-starlib-0.2.0",
+        urls = [
+            "http://github.com/cgrindel/bazel-starlib/archive/v0.2.0.tar.gz",
+        ],
     )
 
     maybe(
