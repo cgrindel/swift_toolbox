@@ -1,4 +1,4 @@
-name: Build
+name: CI for PR Merge
 
 on:
   pull_request:
@@ -12,10 +12,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Output the Bazel Info
-      shell: bash
-      run: |
-        bazelisk info
+    - uses: cgrindel/gha_set_up_bazel@v1
+      with:
+        repo_name: swift_toolbox
 
     - name: Execute Tests
       shell: bash
