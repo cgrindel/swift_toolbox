@@ -30,7 +30,7 @@ spm_rules_dependencies()
 
 load("@cgrindel_rules_swiftformat//swiftformat:load_package.bzl", "swiftformat_load_package")
 
-swiftformat_load_package()
+swiftformat_load_package(version = "0.49.1")
 
 # MARK: - bazel-starlib Dependencies
 

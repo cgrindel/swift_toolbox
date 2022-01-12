@@ -12,17 +12,19 @@ def swift_toolbox_dependencies():
     maybe(
         http_archive,
         name = "cgrindel_bazel_starlib",
-        sha256 = "238c05abf31447b93bd15b616c7413c4c719ee7b5e81c1489ca20f02ce628489",
-        strip_prefix = "bazel-starlib-0.2.0",
+        sha256 = "9e054e423bb7674e02052e52725b41288369dd94efff963479f76fe269b5177f",
+        strip_prefix = "bazel-starlib-0.3.1",
         urls = [
-            "http://github.com/cgrindel/bazel-starlib/archive/v0.2.0.tar.gz",
+            "http://github.com/cgrindel/bazel-starlib/archive/v0.3.1.tar.gz",
         ],
     )
 
     maybe(
         http_archive,
         name = "cgrindel_rules_swiftformat",
-        sha256 = "e47378d771ed977756920075eeca62cc7feb0f4e2961571a3467727b813b7396",
-        strip_prefix = "rules_swiftformat-0.3.0",
-        urls = ["https://github.com/cgrindel/rules_swiftformat/archive/v0.3.0.tar.gz"],
+        sha256 = "d54f3ef6c027e49f45c49e8c287cecfb8b7dd87309a17ad6ec9684f09970436a",
+        strip_prefix = "rules_swiftformat-0.4.0",
+        urls = [
+            "http://github.com/cgrindel/rules_swiftformat/archive/v0.4.0.tar.gz",
+        ],
     )
