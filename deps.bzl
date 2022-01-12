@@ -22,7 +22,9 @@ def swift_toolbox_dependencies():
     maybe(
         http_archive,
         name = "cgrindel_rules_swiftformat",
-        sha256 = "e47378d771ed977756920075eeca62cc7feb0f4e2961571a3467727b813b7396",
-        strip_prefix = "rules_swiftformat-0.3.0",
-        urls = ["https://github.com/cgrindel/rules_swiftformat/archive/v0.3.0.tar.gz"],
+        sha256 = "d54f3ef6c027e49f45c49e8c287cecfb8b7dd87309a17ad6ec9684f09970436a",
+        strip_prefix = "rules_swiftformat-0.4.0",
+        urls = [
+            "http://github.com/cgrindel/rules_swiftformat/archive/v0.4.0.tar.gz",
+        ],
     )
