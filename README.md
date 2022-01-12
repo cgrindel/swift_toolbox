@@ -12,6 +12,7 @@ and tested using [Bazel](https://bazel.build/).
 
 Add the following to your `WORKSPACE` file to add this repository and its dependencies.
 
+<!-- BEGIN WORKSPACE SNIPPET -->
 ```python
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
@@ -22,4 +23,5 @@ http_archive(
     url = "https://github.com/cgrindel/swift_toolbox/archive/v0.2.0.tar.gz",
 )
 ```
+<!-- END WORKSPACE SNIPPET -->
 
