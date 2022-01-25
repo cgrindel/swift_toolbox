@@ -17,4 +17,8 @@ class WithableTests: XCTestCase {
       .key(\.name) { $0.isEqualTo("foo") }
       .key(\.number) { $0.isEqualTo(123) }
   }
+
+  static var allTests = [
+    ("test_with", test_with),
+  ]
 }
