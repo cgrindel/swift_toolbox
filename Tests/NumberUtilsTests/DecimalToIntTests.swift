@@ -8,4 +8,8 @@ class DecimalToIntTests: XCTestCase {
     assertThat("123.456".decimalValue.intValue).isEqualTo(123)
     assertThat("-123.456".decimalValue.intValue).isEqualTo(-123)
   }
+
+  static var allTests = [
+    ("test_intValue_WithCondition_Expectation", test_intValue_WithCondition_Expectation),
+  ]
 }

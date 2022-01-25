@@ -38,4 +38,11 @@ class LengthConversionsTests: XCTestCase {
     assertThat(feet).isEqualTo(LengthConversions.feetPerMeter * 1000)
     assertThat(feet.feetToKilometers).isEqualTo(kilometer)
   }
+
+  static var allTests = [
+    ("test_Meters_Kilometers", test_Meters_Kilometers),
+    ("test_Degrees_Radians", test_Degrees_Radians),
+    ("test_Feet_Meters", test_Feet_Meters),
+    ("test_Feet_Kilometers", test_Feet_Kilometers),
+  ]
 }

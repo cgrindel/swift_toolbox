@@ -11,4 +11,8 @@ class DecimalRoundingTests: XCTestCase {
 
     assertThat(decimal.roundTo(decimalPlaces: 2, roundingMode: .down)).isEqualTo("123.45")
   }
+
+  static var allTests = [
+    ("test_roundTo", test_roundTo),
+  ]
 }

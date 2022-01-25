@@ -8,4 +8,8 @@ class DecimalToDoubleTests: XCTestCase {
     let decimal = Decimal(double)
     assertThat(decimal.doubleValue).isEqualTo(double)
   }
+
+  static var allTests = [
+    ("test", test),
+  ]
 }
