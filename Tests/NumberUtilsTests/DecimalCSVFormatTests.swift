@@ -49,4 +49,13 @@ class DecimalCSVFormatTests: XCTestCase {
     let result = try JSONDecoder().decode(Foo.self, from: data)
     assertThat(result).isEqualTo(foo)
   }
+
+  static var allTests = [
+    ("test_asDecimal", test_asDecimal),
+    ("test_csvValueAndDecimalValue_RoundTrip", test_csvValueAndDecimalValue_RoundTrip),
+    ("test_decimalValue_WithBadString", test_decimalValue_WithBadString),
+    ("test_decimalFromLiteralString", test_decimalFromLiteralString),
+    ("test_decimalValue_FromSubstring", test_decimalValue_FromSubstring),
+    ("test_codability_OfDecimal", test_codability_OfDecimal),
+  ]
 }

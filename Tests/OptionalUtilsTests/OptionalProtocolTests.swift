@@ -10,4 +10,8 @@ class OptionalProtocolTests: XCTestCase {
     XCTAssertTrue(val.isSome())
     XCTAssertFalse(val.isNone())
   }
+
+  static var allTests = [
+    ("test_isSomeAndIsNone", test_isSomeAndIsNone),
+  ]
 }

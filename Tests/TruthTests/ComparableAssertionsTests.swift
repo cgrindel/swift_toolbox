@@ -27,4 +27,11 @@ class ComparableAssertionsTests: XCTestCase {
       $0.that(actual).isIn(range)
     }
   }
+
+  static var allTests = [
+    ("test_isIn_WithRange_Success", test_isIn_WithRange_Success),
+    ("test_isIn_WithRange_Failure", test_isIn_WithRange_Failure),
+    ("test_isIn_WithClosedRange_Success", test_isIn_WithClosedRange_Success),
+    ("test_isIn_WithClosedRange_Failure", test_isIn_WithClosedRange_Failure),
+  ]
 }

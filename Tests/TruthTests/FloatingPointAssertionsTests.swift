@@ -53,4 +53,15 @@ class FloatingPointAssertionsTests: XCTestCase {
       $0.that(1.0).isGreaterThan(2.0)
     }
   }
+
+  static var allTests = [
+    ("test_isCloseTo_plusOrMinus_Success", test_isCloseTo_plusOrMinus_Success),
+    ("test_isCloseTo_plusOrMinus_Fails", test_isCloseTo_plusOrMinus_Fails),
+    ("test_isCloseTo_within_Success", test_isCloseTo_within_Success),
+    ("test_isCloseTo_within_Fails", test_isCloseTo_within_Fails),
+    ("test_isLessThan_Success", test_isLessThan_Success),
+    ("test_isLessThan_Failure", test_isLessThan_Failure),
+    ("test_isGreaterThan_Success", test_isGreaterThan_Success),
+    ("test_isGreaterThan_Failure", test_isGreaterThan_Failure),
+  ]
 }

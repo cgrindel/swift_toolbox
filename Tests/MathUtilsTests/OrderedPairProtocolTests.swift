@@ -28,4 +28,8 @@ class OrderedPairProtocolTests: XCTestCase {
       .key(\.xValues) { $0.isEqualTo([1, 2, 3]) }
       .key(\.yValues) { $0.isEqualTo([5, 6, 7]) }
   }
+
+  static var allTests = [
+    ("test_xValues_yValues", test_xValues_yValues),
+  ]
 }

@@ -17,4 +17,11 @@ class BoolAssertionsTests: XCTestCase {
   func test_isFalse_Failure() {
     assertFailure([Fact("expected to be false")]) { $0.that(true).isFalse() }
   }
+
+  static var allTests = [
+    ("test_isTrue_Success", test_isTrue_Success),
+    ("test_isTrue_Failure", test_isTrue_Failure),
+    ("test_isFalse_Success", test_isFalse_Success),
+    ("test_isFalse_Failure", test_isFalse_Failure),
+  ]
 }

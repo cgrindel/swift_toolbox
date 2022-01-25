@@ -83,4 +83,19 @@ class DecimalAssertionsTests: XCTestCase {
       $0.that(value).isGreaterThan(expected)
     }
   }
+
+  static var allTests = [
+    ("test_isNaN_Success", test_isNaN_Success),
+    ("test_isNaN_Fails", test_isNaN_Fails),
+    ("test_isNotNaN_Success", test_isNotNaN_Success),
+    ("test_isNotNaN_Fails", test_isNotNaN_Fails),
+    ("test_isCloseTo_plusOrMinus_Success", test_isCloseTo_plusOrMinus_Success),
+    ("test_isCloseTo_plusOrMinus_Fails", test_isCloseTo_plusOrMinus_Fails),
+    ("test_isCloseTo_within_Success", test_isCloseTo_within_Success),
+    ("test_isCloseTo_within_Fails", test_isCloseTo_within_Fails),
+    ("test_isLessThan_Success", test_isLessThan_Success),
+    ("test_isLessThan_Failure", test_isLessThan_Failure),
+    ("test_isGreaterThan_Success", test_isGreaterThan_Success),
+    ("test_isGreaterThan_Failure", test_isGreaterThan_Failure),
+  ]
 }

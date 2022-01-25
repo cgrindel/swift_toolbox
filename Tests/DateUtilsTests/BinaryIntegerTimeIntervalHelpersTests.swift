@@ -16,4 +16,8 @@ class TimeIntervalHelpersTests: XCTestCase {
     assertThat(500.days).isEqualTo(500 * 24 * 60 * 60)
     assertThat(-1.minute).isEqualTo(-60.0)
   }
+
+  static var allTests = [
+    ("test_BinaryIntegerExtensions", test_BinaryIntegerExtensions),
+  ]
 }

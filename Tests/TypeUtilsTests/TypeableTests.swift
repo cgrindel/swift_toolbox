@@ -22,4 +22,9 @@ class TypeableTests: XCTestCase {
       }
     }
   }
+
+  static var allTests = [
+    ("test_asType_ForTypeable_Success", test_asType_ForTypeable_Success),
+    ("test_asType_ForTypeable_Fail", test_asType_ForTypeable_Fail),
+  ]
 }

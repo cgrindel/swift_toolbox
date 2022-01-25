@@ -32,4 +32,12 @@ class SequenceAssertionsTests: XCTestCase {
       $0.that(actual).eachItem { $0.isTrue() }
     }
   }
+
+  static var allTests = [
+    ("test_contains_Success", test_contains_Success),
+    ("test_contains_Failure", test_contains_Failure),
+    ("test_contains_WithTwoMissing_Failure", test_contains_WithTwoMissing_Failure),
+    ("test_eachItem_Success", test_eachItem_Success),
+    ("test_eachItem_Failure", test_eachItem_Failure),
+  ]
 }

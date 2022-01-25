@@ -38,4 +38,10 @@ class TypeAssertionsTests: XCTestCase {
       $0.that(Foo()).isA(Foo.self) { _ in throw AssertionConsumerError.testError }
     }
   }
+
+  static var allTests = [
+    ("test_isA_Success", test_isA_Success),
+    ("test_isA_Failure", test_isA_Failure),
+    ("test_isA_WithError", test_isA_WithError),
+  ]
 }

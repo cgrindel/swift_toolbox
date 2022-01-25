@@ -23,4 +23,8 @@ class CopyWithableTests: XCTestCase {
       .key(\.name) { $0.isEqualTo("bar") }
       .key(\.number) { $0.isEqualTo(55) }
   }
+
+  static var allTests = [
+    ("test_copyWith", test_copyWith),
+  ]
 }

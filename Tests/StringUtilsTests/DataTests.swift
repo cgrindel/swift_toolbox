@@ -44,4 +44,10 @@ class DataTests: XCTestCase {
       }
     }
   }
+
+  static var allTests = [
+    ("test_toStringAndToDataRoundTrip_Success", test_toStringAndToDataRoundTrip_Success),
+    ("test_toData_WithIncorrectEncoding_Fails", test_toData_WithIncorrectEncoding_Fails),
+    ("test_toString_WithIncorrectEncoding_Fails", test_toString_WithIncorrectEncoding_Fails),
+  ]
 }

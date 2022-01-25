@@ -54,4 +54,17 @@ class DictionaryAssertionsTests: XCTestCase {
       $0.that(dict).doesNotHaveKey("foo")
     }
   }
+
+  static var allTests = [
+    ("test_hasKey_WhenKeyExists", test_hasKey_WhenKeyExists),
+    ("test_hasKey_WhenKeyDoesNotExist", test_hasKey_WhenKeyDoesNotExist),
+    ("test_hasKey_WhenKeyExistsAndValueCanBeNil", test_hasKey_WhenKeyExistsAndValueCanBeNil),
+    (
+      "test_hasKey_WhenKeyDoesNotExistAndValueCanBeNil",
+      test_hasKey_WhenKeyDoesNotExistAndValueCanBeNil
+    ),
+    ("test_hasKey_WithError", test_hasKey_WithError),
+    ("test_doesNotHaveKey_WhenKeyDoesNotExist", test_doesNotHaveKey_WhenKeyDoesNotExist),
+    ("test_doesNotHaveKey_WhenKeyDoesExist", test_doesNotHaveKey_WhenKeyDoesExist),
+  ]
 }

@@ -32,4 +32,12 @@ class DecimalSequenceHelpersTests: XCTestCase {
     assertThat(decimals * decimals).isEqualTo([1, 4, 9])
     assertThat(decimals * moreDecimals).isEqualTo([5, 12, 21])
   }
+
+  static var allTests = [
+    ("test_sum_WithEmptySequence", test_sum_WithEmptySequence),
+    ("test_sum_WithValues", test_sum_WithValues),
+    ("test_average_WithEmptyCollection", test_average_WithEmptyCollection),
+    ("test_average_WithValues", test_average_WithValues),
+    ("test_mulitplication", test_mulitplication),
+  ]
 }

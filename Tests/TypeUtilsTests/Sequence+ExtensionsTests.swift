@@ -10,4 +10,8 @@ class SequenceExtensionsTests: XCTestCase {
     assertThat(empty.ofType(String.self)).isEqualTo([])
     assertThat(testItems.ofType(String.self)).isEqualTo(["foo", "bar"])
   }
+
+  static var allTests = [
+    ("test_ofType_ForSequence", test_ofType_ForSequence),
+  ]
 }

@@ -13,4 +13,9 @@ class DecimalRandomTests: XCTestCase {
     let result = Decimal.random(in: range)
     assertThat(result).isIn(range)
   }
+
+  static var allTests = [
+    ("test_random_WithRange", test_random_WithRange),
+    ("test_random_WithClosedRange", test_random_WithClosedRange),
+  ]
 }

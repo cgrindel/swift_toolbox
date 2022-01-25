@@ -21,4 +21,11 @@ class BinaryIntegerAssertionsTests: XCTestCase {
       $0.that(1).isGreaterThan(2)
     }
   }
+
+  static var allTests = [
+    ("test_isLessThan_Success", test_isLessThan_Success),
+    ("test_isLessThan_Failure", test_isLessThan_Failure),
+    ("test_isGreaterThan_Success", test_isGreaterThan_Success),
+    ("test_isGreaterThan_Failure", test_isGreaterThan_Failure),
+  ]
 }

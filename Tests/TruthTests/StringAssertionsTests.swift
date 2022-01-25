@@ -26,4 +26,11 @@ class StringAssertionsTests: XCTestCase {
       Fact("END ACTUAL"),
     ]) { $0.that(actual).matches(regex) }
   }
+
+  static var allTests = [
+    ("test_contains_Success", test_contains_Success),
+    ("test_contains_Fail", test_contains_Fail),
+    ("test_matches_Success", test_matches_Success),
+    ("test_matches_Fails", test_matches_Fails),
+  ]
 }

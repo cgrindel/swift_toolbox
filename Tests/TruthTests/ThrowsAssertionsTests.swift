@@ -77,4 +77,29 @@ class ThrowsAssertionsTests: XCTestCase {
       $0.that { throw error }.doesNotThrow()
     }
   }
+
+  static var allTests = [
+    ("test_doesThrow_WithoutError_Success", test_doesThrow_WithoutError_Success),
+    (
+      "test_doesThrow_WithoutError_FailToThrowAnError",
+      test_doesThrow_WithoutError_FailToThrowAnError
+    ),
+    ("test_doesThrow_WithConsumer_Success", test_doesThrow_WithConsumer_Success),
+    ("test_doesThrow_WithError_Success", test_doesThrow_WithError_Success),
+    ("test_doesThrow_WithError_FailToThrowAnError", test_doesThrow_WithError_FailToThrowAnError),
+    (
+      "test_doesThrow_WithError_FailToThrowErrorWithExpectedType",
+      test_doesThrow_WithError_FailToThrowErrorWithExpectedType
+    ),
+    (
+      "test_doesThrow_WithError_FailToThrowExpectedError",
+      test_doesThrow_WithError_FailToThrowExpectedError
+    ),
+    (
+      "test_doesThrow_WithErrorConsumerThrowingError",
+      test_doesThrow_WithErrorConsumerThrowingError
+    ),
+    ("test_doesNotThrow_Success", test_doesNotThrow_Success),
+    ("test_doesNotThrow_CatchesError", test_doesNotThrow_CatchesError),
+  ]
 }

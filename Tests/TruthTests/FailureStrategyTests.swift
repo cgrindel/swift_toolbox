@@ -14,12 +14,17 @@ class FailureCaptureTests: XCTestCase {
     assertThat(failureCapture.capturedFailures.asEquatable()).isEqualTo(expectedFailures)
   }
 
-  func test_failWith_() {
+  func test_failWith() {
     let failureCapture = FailureCapture()
     let failure = Failure(message: "foo msg", file: "foo", line: 123)
     failureCapture.fail(with: failure)
     assertThat(failureCapture.capturedFailures.asEquatable()).isEqualTo([failure.asEquatable()])
   }
+
+  static var allTests = [
+    ("test_fail", test_fail),
+    ("test_failWith", test_failWith),
+  ]
 }
 
 class FailureTests: XCTestCase {
@@ -53,6 +58,13 @@ class FailureTests: XCTestCase {
     ]
     XCTAssertEqual(failures.asEquatable(), expected)
   }
+
+  static var allTests = [
+    ("test_Failure_init", test_Failure_init),
+    ("test_EquatableFailure_init", test_EquatableFailure_init),
+    ("test_Failure_asEquatable", test_Failure_asEquatable),
+    ("test_FailureCollection_asEquatable", test_FailureCollection_asEquatable),
+  ]
 }
 
 class FailureCaptureInTestCaseTests: XCTestCase {
@@ -69,4 +81,8 @@ class FailureCaptureInTestCaseTests: XCTestCase {
       [EquatableFailure(message: "This should be captured", file: "foo", line: 123)]
     )
   }
+
+  static var allTests = [
+    ("test", test),
+  ]
 }

@@ -15,4 +15,8 @@ class TimeIntervalDateArithmeticTests: XCTestCase {
     assertThat(1.minute.ago(date)).isEqualTo(date.addingTimeInterval(-1.minute))
     assertThat { 1.minute.ago() }.doesNotThrow()
   }
+
+  static var allTests = [
+    ("test_DateArithmeticFromADate", test_DateArithmeticFromADate),
+  ]
 }

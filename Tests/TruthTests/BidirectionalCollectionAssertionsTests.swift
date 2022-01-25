@@ -20,4 +20,10 @@ class BidirectionalCollectionAssertionsTests: XCTestCase {
       $0.that(actual).lastItem { _ in throw AssertionConsumerError.testError }
     }
   }
+
+  static var allTests = [
+    ("test_lastItem_WithLastElement", test_lastItem_WithLastElement),
+    ("test_lastItem_WithNoLastElement", test_lastItem_WithNoLastElement),
+    ("test_lastItem_WithError", test_lastItem_WithError),
+  ]
 }

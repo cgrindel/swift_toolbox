@@ -6,4 +6,8 @@ class DoubleToDecimalTests: XCTestCase {
     let double = 123.0
     assertThat(double.decimalValue).isEqualTo(Decimal(double))
   }
+
+  static var allTests = [
+    ("test", test),
+  ]
 }

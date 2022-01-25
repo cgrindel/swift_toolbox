@@ -29,4 +29,10 @@ class SubjectTests: XCTestCase {
     }
     XCTAssertTrue(failure.message.contains(customMessage))
   }
+
+  static var allTests = [
+    ("test_chainingOfAssertions_ProceedsIfSuccess", test_chainingOfAssertions_ProceedsIfSuccess),
+    ("test_chainingOfAssertions_HaltsIfFailure", test_chainingOfAssertions_HaltsIfFailure),
+    ("test_withMessage", test_withMessage),
+  ]
 }

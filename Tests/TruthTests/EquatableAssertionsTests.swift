@@ -357,4 +357,83 @@ class EquatableAssertionsTests: XCTestCase {
       $0.that(actual).isIn(sequence)
     }
   }
+
+  static var allTests = [
+    ("test_isEqualTo_WithNonNilValues_Succeeds", test_isEqualTo_WithNonNilValues_Succeeds),
+    ("test_isEqualTo_WithNilValues_Succeeds", test_isEqualTo_WithNilValues_Succeeds),
+    ("test_isEqualTo_WithNonNilValues_Fails", test_isEqualTo_WithNonNilValues_Fails),
+    ("test_isEqualTo_WithNonNilAndNilValues_Fails", test_isEqualTo_WithNonNilAndNilValues_Fails),
+    ("test_isNotEqualTo_WithNonNilValues_Succeeds", test_isNotEqualTo_WithNonNilValues_Succeeds),
+    ("test_isNotEqualTo_WithOneNilValue_Succeeds", test_isNotEqualTo_WithOneNilValue_Succeeds),
+    ("test_isNotEqualTo_WithNonNilValues_Fails", test_isNotEqualTo_WithNonNilValues_Fails),
+    ("test_isNotEqualTo_WithNilValues_Fails", test_isNotEqualTo_WithNilValues_Fails),
+    ("test_isNotEqualTo_when_is_Succeeds", test_isNotEqualTo_when_is_Succeeds),
+    ("test_isNotEqualTo_when_is_Fails", test_isNotEqualTo_when_is_Fails),
+    (
+      "test_isNotEqualTo_when_is_FailsDueToExpectedNotBeingEqualFromBeginning",
+      test_isNotEqualTo_when_is_FailsDueToExpectedNotBeingEqualFromBeginning
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_OptionalNumericValue_Success",
+      test_isNotEqualTo_withDifferent_OptionalNumericValue_Success
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_OptionalNumericValue_Fail",
+      test_isNotEqualTo_withDifferent_OptionalNumericValue_Fail
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_NumericValue_Success",
+      test_isNotEqualTo_withDifferent_NumericValue_Success
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_NumericValue_Fail",
+      test_isNotEqualTo_withDifferent_NumericValue_Fail
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_BoolValue_Success",
+      test_isNotEqualTo_withDifferent_BoolValue_Success
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_BoolValue_Fail",
+      test_isNotEqualTo_withDifferent_BoolValue_Fail
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_StringValue_Success",
+      test_isNotEqualTo_withDifferent_StringValue_Success
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_StringValue_Fail",
+      test_isNotEqualTo_withDifferent_StringValue_Fail
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_OptionalStringValue_Success",
+      test_isNotEqualTo_withDifferent_OptionalStringValue_Success
+    ),
+    (
+      "test_isNotEqualTo_withDifferent_OptionalStringValue_Fail",
+      test_isNotEqualTo_withDifferent_OptionalStringValue_Fail
+    ),
+    ("test_isNotEqualTo_WithDifferent_UUID_Success", test_isNotEqualTo_WithDifferent_UUID_Success),
+    ("test_isNotEqualTo_WithDifferent_UUID_Fail", test_isNotEqualTo_WithDifferent_UUID_Fail),
+    (
+      "test_isNotEqualTo_WithDifferent_OptionalUUID_Success",
+      test_isNotEqualTo_WithDifferent_OptionalUUID_Success
+    ),
+    (
+      "test_isNotEqualTo_WithDifferent_OptionalUUID_Fail",
+      test_isNotEqualTo_WithDifferent_OptionalUUID_Fail
+    ),
+    ("test_isNotEqualTo_WithDifferent_Date_Success", test_isNotEqualTo_WithDifferent_Date_Success),
+    ("test_isNotEqualTo_WithDifferent_Date_Fail", test_isNotEqualTo_WithDifferent_Date_Fail),
+    (
+      "test_isNotEqualTo_WithDifferent_OptionalDate_Success",
+      test_isNotEqualTo_WithDifferent_OptionalDate_Success
+    ),
+    (
+      "test_isNotEqualTo_WithDifferent_OptionalDate_Fail",
+      test_isNotEqualTo_WithDifferent_OptionalDate_Fail
+    ),
+    ("test_isIn_Success", test_isIn_Success),
+    ("test_isIn_Failure", test_isIn_Failure),
+  ]
 }

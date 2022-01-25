@@ -28,6 +28,12 @@ class FactTests: XCTestCase {
     let facts = [Fact("first fact"), Fact("second fact", factValue)]
     assertThat(facts.toMessage()).isEqualTo("first fact, second fact \(factValue)")
   }
+
+  static var allTests = [
+    ("test_init_WithKey", test_init_WithKey),
+    ("test_init_WithKeyAndValue", test_init_WithKeyAndValue),
+    ("test_toMessage_OnCollectionOfFacts", test_toMessage_OnCollectionOfFacts),
+  ]
 }
 
 class FailWithFactsTests: XCTestCase {
@@ -51,4 +57,9 @@ class FailWithFactsTests: XCTestCase {
       EquatableFailure(message: "first fact, second fact", file: file.toString(), line: line),
     ])
   }
+
+  static var allTests = [
+    ("test_fail_WithFactsAsVariadic", test_fail_WithFactsAsVariadic),
+    ("test_fail_WithFactsAsArray", test_fail_WithFactsAsArray),
+  ]
 }
