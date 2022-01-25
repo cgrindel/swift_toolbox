@@ -34,4 +34,11 @@ class AssertThatTests: XCTestCase {
     let result = assertThat { 1 == 1 }
     XCTAssertNotNil(result)
   }
+
+  static var allTests = [
+    ("test_assertThat_ForTargets", test_assertThat_ForTargets),
+    ("test_assertThat_WithCustomMessage", test_assertThat_WithCustomMessage),
+    ("test_assertThat_WithConsumer", test_assertThat_WithConsumer),
+    ("test_assertThat_ForThrows", test_assertThat_ForThrows),
+  ]
 }

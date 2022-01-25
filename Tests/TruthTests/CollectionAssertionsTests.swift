@@ -89,4 +89,19 @@ class CollectionAssertionsTests: XCTestCase {
       $0.that([1, 2, 3]).firstItem { _ in throw AssertionConsumerError.testError }
     }
   }
+
+  static var allTests = [
+    ("test_hasCount_Success", test_hasCount_Success),
+    ("test_hasCount_Failure", test_hasCount_Failure),
+    ("test_isEmpty_Success", test_isEmpty_Success),
+    ("test_isEmpty_Failure", test_isEmpty_Failure),
+    ("test_isNotEmpty_Success", test_isNotEmpty_Success),
+    ("test_isNotEmpty_Failure", test_isNotEmpty_Failure),
+    ("test_item_WithValidIndex", test_item_WithValidIndex),
+    ("test_itemAt_WithValidInvalidIndex", test_itemAt_WithValidInvalidIndex),
+    ("test_itemAt_WithError", test_itemAt_WithError),
+    ("test_firstItem_WithFirstElement", test_firstItem_WithFirstElement),
+    ("test_firstItem_WithNoFirstElement", test_firstItem_WithNoFirstElement),
+    ("test_firstItem_WithError", test_firstItem_WithError),
+  ]
 }
