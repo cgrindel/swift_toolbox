@@ -11,4 +11,8 @@ class OrderedPairTests: XCTestCase {
       .key(\.x) { $0.isEqualTo(xValue) }
       .key(\.y) { $0.isEqualTo(yValue) }
   }
+
+  static var allTests = [
+    ("test_init", test_init),
+  ]
 }

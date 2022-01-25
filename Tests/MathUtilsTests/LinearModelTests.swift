@@ -37,4 +37,11 @@ class LinearModelTests: XCTestCase {
       $0.intercept = -1
     })
   }
+
+  static var allTests = [
+    ("test_yValue", test_yValue),
+    ("test_from_WithEmptyPairs", test_from_WithEmptyPairs),
+    ("test_from_WithOnePair", test_from_WithOnePair),
+    ("test_from_WithPairs", test_from_WithPairs),
+  ]
 }
