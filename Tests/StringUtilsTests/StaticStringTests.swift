@@ -6,4 +6,8 @@ class StaticStringTests: XCTestCase {
     let staticString: StaticString = "foo"
     assertThat(staticString.toString()).isEqualTo("foo")
   }
+
+  static var allTests = [
+    ("testSomething", testSomething),
+  ]
 }

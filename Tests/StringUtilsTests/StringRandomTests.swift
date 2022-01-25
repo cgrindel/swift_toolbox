@@ -18,4 +18,8 @@ class StringRandomTests: XCTestCase {
       assertThat(char).isIn(mode.letters)
     }
   }
+
+  static var allTests = [
+    ("test_random", test_random),
+  ]
 }

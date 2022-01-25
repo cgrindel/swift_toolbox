@@ -10,4 +10,8 @@ class StringRangeSubscriptExtTests: XCTestCase {
     assertThat(String(value.substring(to: 5))).isEqualTo("hello")
     assertThat(String(value.substring(with: 3 ..< 8))).isEqualTo("lo go")
   }
+
+  static var allTests = [
+    ("test_extensionHelpers", test_extensionHelpers),
+  ]
 }
