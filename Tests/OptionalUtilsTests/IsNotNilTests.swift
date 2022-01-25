@@ -23,4 +23,9 @@ class IsNotNilTests: XCTestCase {
       }
     }
   }
+
+  static var allTests = [
+    ("test_isNotNil_WithNonNilValue", test_isNotNil_WithNonNilValue),
+    ("test_isNotNil_WithNilValue", test_isNotNil_WithNilValue),
+  ]
 }
