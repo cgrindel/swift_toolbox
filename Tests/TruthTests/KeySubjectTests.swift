@@ -24,4 +24,9 @@ class KeySubjectTests: XCTestCase {
   //   }
   //   XCTAssertTrue(failure.message.contains("key: name"))
   // }
+
+  static var allTests = [
+    ("test_key", test_key),
+    ("test_key_WithError", test_key_WithError),
+  ]
 }

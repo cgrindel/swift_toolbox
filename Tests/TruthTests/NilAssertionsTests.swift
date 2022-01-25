@@ -61,4 +61,15 @@ class NilAssertionsTests: XCTestCase {
       $0.that(actual).isNotNil { _ in throw AssertionConsumerError.testError }
     }
   }
+
+  static var allTests = [
+    ("test_isNil_Succeeds", test_isNil_Succeeds),
+    ("test_isNil_Fails", test_isNil_Fails),
+    ("test_isNotNil_WithoutClosure_Succeeds", test_isNotNil_WithoutClosure_Succeeds),
+    ("test_isNotNil_WithClosure_ForInt_Succeeds", test_isNotNil_WithClosure_ForInt_Succeeds),
+    ("test_isNotNil_WithClosure_ForOptInt_Succeeds", test_isNotNil_WithClosure_ForOptInt_Succeeds),
+    ("test_isNotNil_WithoutClosure_Fails", test_isNotNil_WithoutClosure_Fails),
+    ("test_isNotNil_WithClosure_Fails", test_isNotNil_WithClosure_Fails),
+    ("test_isNotNil_WithError", test_isNotNil_WithError),
+  ]
 }

@@ -15,4 +15,9 @@ class ExpectFailureTests: XCTestCase {
     }
     XCTAssertEqual(failures.count, 0)
   }
+
+  static var allTests = [
+    ("test_assertionFailureOccurs", test_assertionFailureOccurs),
+    ("test_assertionFailureDoesNotOccur", test_assertionFailureDoesNotOccur),
+  ]
 }

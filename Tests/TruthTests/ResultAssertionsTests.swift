@@ -75,4 +75,17 @@ class ResultAssertionsTests: XCTestCase {
       $0.that(self.failure).isFailure { _ in throw AssertionConsumerError.testError }
     }
   }
+
+  static var allTests = [
+    ("test_isSuccess_WithoutClosure_Success", test_isSuccess_WithoutClosure_Success),
+    ("test_isSuccess_WithoutClosure_Fail", test_isSuccess_WithoutClosure_Fail),
+    ("test_isSuccess_WithClosure_Success", test_isSuccess_WithClosure_Success),
+    ("test_isSuccess_WithClosure_Fail", test_isSuccess_WithClosure_Fail),
+    ("test_isSuccess_WithError", test_isSuccess_WithError),
+    ("test_isFailure_WithoutClosure_Success", test_isFailure_WithoutClosure_Success),
+    ("test_isFailure_WithoutClosure_Fail", test_isFailure_WithoutClosure_Fail),
+    ("test_isFailure_WithClosure_Success", test_isFailure_WithClosure_Success),
+    ("test_isFailure_WithClosure_Fail", test_isFailure_WithClosure_Fail),
+    ("test_isFailure_WithError", test_isFailure_WithError),
+  ]
 }
