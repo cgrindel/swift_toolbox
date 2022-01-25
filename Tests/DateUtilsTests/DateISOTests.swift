@@ -53,4 +53,13 @@ class DateISOTests: XCTestCase {
       $0.that(result).isEqualTo(dateString)
     }
   }
+
+  static var allTests = [
+    ("test_toAndFromISOString", test_toAndFromISOString),
+    ("test_isoWithMillis", test_isoWithMillis),
+    ("test_tryToDate_Success", test_tryToDate_Success),
+    ("test_tryToDate_Fail", test_tryToDate_Fail),
+    ("test_normalized", test_normalized),
+    ("test_toAndFromISODateString", test_toAndFromISODateString),
+  ]
 }
