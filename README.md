@@ -1,6 +1,6 @@
 # Handy Swift Modules 
 
-[![Build Status](https://github.com/cgrindel/swift_toolbox/actions/workflows/ci.yml/badge.svg)](https://github.com/cgrindel/swift_toolbox/actions/workflows/ci.yml)
+[![Build Status](https://github.com/cgrindel/swift_toolbox/actions/workflows/scheduled_builds.yml/badge.svg)](https://github.com/cgrindel/swift_toolbox/actions/workflows/scheduled_builds.yml)
 
 This repository contains handy Swift modules for development and testing. The Swift code is built
 and tested using [Bazel](https://bazel.build/).
