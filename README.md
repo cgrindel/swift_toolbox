@@ -19,10 +19,10 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "cgrindel_swift_toolbox",
-    sha256 = "df1a318f140a278f43a9680ad121e202d9f185578a019dd8efaede4fa4571d4d",
-    strip_prefix = "swift_toolbox-0.3.0",
+    sha256 = "506d77f7adde108dbc3ca4e072a751576effc0c9162b76816d9f8968aea420aa",
+    strip_prefix = "swift_toolbox-0.3.1",
     urls = [
-        "http://github.com/cgrindel/swift_toolbox/archive/v0.3.0.tar.gz",
+        "http://github.com/cgrindel/swift_toolbox/archive/v0.3.1.tar.gz",
     ],
 )
 ```
