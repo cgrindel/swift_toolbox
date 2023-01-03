@@ -36,9 +36,9 @@ def swift_toolbox_dependencies():
     maybe(
         http_archive,
         name = "rules_cc",
-        sha256 = "a0b09cd9dbd6efffd903240a1ee6d15c891a40624f6942b51fe30f8963d4b636",
-        strip_prefix = "rules_cc-8e2588f2e4b1791619862ceb64ecf4ccb2ea564a",
+        sha256 = "0aba1d94c9147645e2ec8aa8bb1952beeb3de16095cf1371e33feaa3c6bb9d38",
+        strip_prefix = "rules_cc-7673ce6438fe6c432ecbb8c3679e7823c93f95b4",
         urls = [
-            "http://github.com/bazelbuild/rules_cc/archive/8e2588f2e4b1791619862ceb64ecf4ccb2ea564a.tar.gz",
+            "http://github.com/bazelbuild/rules_cc/archive/7673ce6438fe6c432ecbb8c3679e7823c93f95b4.tar.gz",
         ],
     )
