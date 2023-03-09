@@ -14,10 +14,10 @@ def swift_toolbox_dependencies():
     maybe(
         http_archive,
         name = "cgrindel_bazel_starlib",
-        sha256 = "8b762188a2788684fedf3bcee115bc243a2f9173a6cee7d73a645c90e843d63c",
-        strip_prefix = "bazel-starlib-0.13.1",
+        sha256 = "613bbda588fb10d591da10809185e0551ee08efc6bc3ac2fb211b094dc23706a",
+        strip_prefix = "bazel-starlib-0.14.2",
         urls = [
-            "http://github.com/cgrindel/bazel-starlib/archive/v0.13.1.tar.gz",
+            "http://github.com/cgrindel/bazel-starlib/archive/v0.14.2.tar.gz",
         ],
     )
 
