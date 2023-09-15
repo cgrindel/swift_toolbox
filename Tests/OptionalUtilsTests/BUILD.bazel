@@ -1,12 +1,18 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_test")
 load("@cgrindel_bazel_starlib//bzlformat:defs.bzl", "bzlformat_pkg")
-load("//build/swift:swift_test.bzl", "swift_test")
+
+bzlformat_pkg(name = "bzlformat")
 
 swift_test(
     name = "OptionalUtilsTests",
+    srcs = [
+        "IsNotNilTests.swift",
+        "OptionalProtocolTests.swift",
+        "main.swift",
+    ],
+    module_name = "OptionalUtilsTests",
     deps = [
         "//Sources/OptionalUtils",
         "//Sources/Truth",
     ],
 )
-
-bzlformat_pkg(name = "bzlformat")

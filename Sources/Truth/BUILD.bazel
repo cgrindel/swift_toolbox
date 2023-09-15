@@ -1,9 +1,37 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 load("@cgrindel_bazel_starlib//bzlformat:defs.bzl", "bzlformat_pkg")
-load("//build/swift:swift_library.bzl", "swift_library")
+
+bzlformat_pkg(name = "bzlformat")
 
 swift_library(
     name = "Truth",
-    testonly = 1,
+    testonly = True,  # keep
+    srcs = [
+        "AssertThat.swift",
+        "BidirectionalCollectionAssertions.swift",
+        "BinaryIntegerAssertions.swift",
+        "BoolAssertions.swift",
+        "CollectionAssertions.swift",
+        "ComparableAssertions.swift",
+        "DecimalAssertions.swift",
+        "DictionaryAssertions.swift",
+        "DictionaryProtocol.swift",
+        "EquatableAssertions.swift",
+        "ExpectFailure.swift",
+        "FailWithFacts.swift",
+        "Failure.swift",
+        "FailureAssertions.swift",
+        "FailureStrategy.swift",
+        "FloatingPointAssertions.swift",
+        "KeySubject.swift",
+        "NilAssertions.swift",
+        "ResultAssertions.swift",
+        "SequenceAssertions.swift",
+        "StringAssertions.swift",
+        "Subject.swift",
+        "ThrowsAssertions.swift",
+        "TypeAssertions.swift",
+    ],
     module_name = "Truth",
     visibility = ["//visibility:public"],
     deps = [
@@ -11,5 +39,3 @@ swift_library(
         "//Sources/StringUtils",
     ],
 )
-
-bzlformat_pkg(name = "bzlformat")
