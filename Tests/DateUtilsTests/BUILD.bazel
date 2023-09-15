@@ -10,6 +10,7 @@ swift_test(
         "BinaryIntegerTimeIntervalHelpersTests.swift",
         "DateISOTests.swift",
         "FloatingPoint+TimeIntervalHelpersTests.swift",
+        "main.swift",
     ],
     module_name = "DateUtilsTests",
     deps = [

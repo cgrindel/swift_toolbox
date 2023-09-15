@@ -10,6 +10,7 @@ swift_test(
         "StaticStringTests.swift",
         "String+SubstringExtTests.swift",
         "StringRandomTests.swift",
+        "main.swift",
     ],
     module_name = "StringUtilsTests",
     deps = [

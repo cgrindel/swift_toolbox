@@ -9,6 +9,7 @@ swift_test(
         "Sequence+ExtensionsTests.swift",
         "TestProtocol.swift",
         "TypeableTests.swift",
+        "main.swift",
     ],
     module_name = "TypeUtilsTests",
     deps = [

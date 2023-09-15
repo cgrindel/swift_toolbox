@@ -8,6 +8,7 @@ swift_test(
     srcs = [
         "IsNotNilTests.swift",
         "OptionalProtocolTests.swift",
+        "main.swift",
     ],
     module_name = "OptionalUtilsTests",
     deps = [

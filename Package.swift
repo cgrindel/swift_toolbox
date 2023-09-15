@@ -19,6 +19,8 @@ let products: [Product] = moduleNames.map { moduleName in
 }
 
 let bazelBuildFiles = ["BUILD.bazel"]
+// The main.swift in the test directories exists to support Bazel `swift_test` on Linux.
+let testExclude = bazelBuildFiles + ["main.swift"]
 
 let package = Package(
   name: "swift_toolbox",
@@ -28,41 +30,41 @@ let package = Package(
     .testTarget(
       name: "DateUtilsTests",
       dependencies: ["DateUtils", "Truth"],
-      exclude: ["BUILD.bazel"]
+      exclude: testExclude
     ),
     .target(
       name: "MathUtils",
       dependencies: ["StructUtils"],
-      exclude: ["BUILD.bazel"]
+      exclude: bazelBuildFiles
     ),
     .testTarget(
       name: "MathUtilsTests",
       dependencies: ["MathUtils", "Truth"],
-      exclude: ["BUILD.bazel"]
+      exclude: testExclude
     ),
     .target(name: "NumberUtils", exclude: bazelBuildFiles),
     .testTarget(
       name: "NumberUtilsTests",
       dependencies: ["NumberUtils", "Truth"],
-      exclude: ["BUILD.bazel"]
+      exclude: testExclude
     ),
     .target(name: "OptionalUtils", exclude: bazelBuildFiles),
     .testTarget(
       name: "OptionalUtilsTests",
       dependencies: ["OptionalUtils", "Truth"],
-      exclude: ["BUILD.bazel"]
+      exclude: testExclude
     ),
     .target(name: "StringUtils", exclude: bazelBuildFiles),
     .testTarget(
       name: "StringUtilsTests",
       dependencies: ["StringUtils", "Truth"],
-      exclude: ["BUILD.bazel"]
+      exclude: testExclude
     ),
     .target(name: "StructUtils", exclude: bazelBuildFiles),
     .testTarget(
       name: "StructUtilsTests",
       dependencies: ["StructUtils", "Truth"],
-      exclude: bazelBuildFiles
+      exclude: testExclude
     ),
     .target(
       name: "Truth",
@@ -72,13 +74,13 @@ let package = Package(
     .testTarget(
       name: "TruthTests",
       dependencies: ["Truth"],
-      exclude: bazelBuildFiles
+      exclude: testExclude
     ),
-    .target(name: "TypeUtils", exclude: ["BUILD.bazel"]),
+    .target(name: "TypeUtils", exclude: bazelBuildFiles),
     .testTarget(
       name: "TypeUtilsTests",
       dependencies: ["TypeUtils", "Truth"],
-      exclude: bazelBuildFiles
+      exclude: testExclude
     ),
   ]
 )
