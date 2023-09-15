@@ -8,7 +8,12 @@ runs:
       run: |
         bazelisk run //:tidy_check
 
-    - name: Execute Tests
+    - name: Execute Bazel Tests
       shell: bash
       run: |
         bazelisk test //... 
+
+    - name: Execute Swift Tests
+      shell: bash
+      run: |
+        swift test
