@@ -11,11 +11,11 @@ class AssertThatTests: XCTestCase {
 
   func test_assertThat_WithCustomMessage() {
     let message = "Custom message."
-    var result = assertThat(target, with: { message })
+    var result = assertThat(target, with: message)
     XCTAssertEqual(result.actual, target)
     XCTAssertEqual(result.customMessages.map { $0() }, [message])
 
-    result = assertThat(target, with: { message }) {
+    result = assertThat(target, with: message) {
       XCTAssertEqual($0.actual, target)
       XCTAssertEqual($0.customMessages.map { $0() }, [message])
     }
