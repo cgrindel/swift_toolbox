@@ -10,7 +10,6 @@ swift_test(
         "LinearModelTests.swift",
         "OrderedPairProtocolTests.swift",
         "OrderedPairTests.swift",
-        "main.swift",
     ],
     module_name = "MathUtilsTests",
     deps = [

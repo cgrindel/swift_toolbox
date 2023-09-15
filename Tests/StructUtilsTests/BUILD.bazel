@@ -8,7 +8,6 @@ swift_test(
     srcs = [
         "CopyWithableTests.swift",
         "WithableTests.swift",
-        "main.swift",
     ],
     module_name = "StructUtilsTests",
     deps = [

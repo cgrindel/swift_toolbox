@@ -13,7 +13,6 @@ swift_test(
         "DecimalToIntTests.swift",
         "DoubleToDecimalTests.swift",
         "LengthConversionsTests.swift",
-        "main.swift",
     ],
     module_name = "NumberUtilsTests",
     deps = [

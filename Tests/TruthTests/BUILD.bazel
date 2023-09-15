@@ -29,7 +29,6 @@ swift_test(
         "SubjectTests.swift",
         "ThrowsAssertionsTests.swift",
         "TypeAssertionsTests.swift",
-        "main.swift",
     ],
     module_name = "TruthTests",
     deps = ["//Sources/Truth"],
