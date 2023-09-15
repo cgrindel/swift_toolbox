@@ -3,13 +3,19 @@ import XCTest
 /// Return a subject for the target.
 public func assertThat<T>(
   _ actual: T,
+  using failureStrategy: FailureStrategy
+) -> Subject<T> {
+  return Subject(actual: actual, failureStrategy: failureStrategy)
+}
+
+/// Return a subject for the target.
+public func assertThat<T>(
+  _ actual: T,
   using failureStrategy: FailureStrategy,
-  with customMessage: MessageClosure? = nil
+  with customMessage: @escaping @autoclosure MessageClosure
 ) -> Subject<T> {
   var customMessages = [MessageClosure]()
-  if let customMessage = customMessage {
-    customMessages.append(customMessage)
-  }
+  customMessages.append(customMessage)
   return Subject(actual: actual, failureStrategy: failureStrategy, customMessages: customMessages)
 }
 
@@ -20,10 +26,24 @@ public func assertThat<T>(
 public func assertThat<T>(
   _ actual: T,
   using failureStrategy: FailureStrategy,
-  with customMessage: MessageClosure? = nil,
   _ consumer: (Subject<T>) -> Void
 ) -> Subject<T> {
-  let subject = assertThat(actual, using: failureStrategy, with: customMessage)
+  let subject = assertThat(actual, using: failureStrategy)
+  consumer(subject)
+  return subject
+}
+
+// Create a subject for the target and pass it to the provided consumer. This form is useful when
+// wanting to perform a number of assertions on a single subject. This avoids massive compilation
+// times when chaining assertions.
+@discardableResult
+public func assertThat<T>(
+  _ actual: T,
+  using failureStrategy: FailureStrategy,
+  with customMessage: @escaping @autoclosure MessageClosure,
+  _ consumer: (Subject<T>) -> Void
+) -> Subject<T> {
+  let subject = assertThat(actual, using: failureStrategy, with: customMessage())
   consumer(subject)
   return subject
 }
@@ -38,8 +58,16 @@ public func assertThat<T>(
 
 public extension XCTestCase {
   /// Return a subject for the target.
-  func assertThat<T>(_ actual: T, with customMessage: MessageClosure? = nil) -> Subject<T> {
-    return Truth.assertThat(actual, using: failureStrategy, with: customMessage)
+  func assertThat<T>(_ actual: T) -> Subject<T> {
+    return Truth.assertThat(actual, using: failureStrategy)
+  }
+
+  /// Return a subject for the target.
+  func assertThat<T>(
+    _ actual: T,
+    with customMessage: @escaping @autoclosure MessageClosure
+  ) -> Subject<T> {
+    return Truth.assertThat(actual, using: failureStrategy, with: customMessage())
   }
 
   // Create a subject for the target and pass it to the provided consumer. This form is useful when
@@ -48,10 +76,21 @@ public extension XCTestCase {
   @discardableResult
   func assertThat<T>(
     _ actual: T,
-    with customMessage: MessageClosure? = nil,
     _ consumer: (Subject<T>) -> Void
   ) -> Subject<T> {
-    return Truth.assertThat(actual, using: failureStrategy, with: customMessage, consumer)
+    return Truth.assertThat(actual, using: failureStrategy, consumer)
+  }
+
+  // Create a subject for the target and pass it to the provided consumer. This form is useful when
+  // wanting to perform a number of assertions on a single subject. This avoids massive compilation
+  // times when chaining assertions.
+  @discardableResult
+  func assertThat<T>(
+    _ actual: T,
+    with customMessage: @autoclosure @escaping MessageClosure,
+    _ consumer: (Subject<T>) -> Void
+  ) -> Subject<T> {
+    return Truth.assertThat(actual, using: failureStrategy, with: customMessage(), consumer)
   }
 
   /// Return a subject for the throwable expression.
