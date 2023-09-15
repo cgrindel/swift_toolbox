@@ -1,4 +1,4 @@
-# Handy Swift Modules 
+# Handy Swift Modules
 
 [![Build
 Status](https://github.com/cgrindel/swift_toolbox/actions/workflows/ci.yml/badge.svg?event=schedule)](https://github.com/cgrindel/swift_toolbox/actions/workflows/ci.yml)
@@ -6,25 +6,20 @@ Status](https://github.com/cgrindel/swift_toolbox/actions/workflows/ci.yml/badge
 This repository contains handy Swift modules for development and testing. The Swift code is built
 and tested using [Bazel](https://bazel.build/).
 
+## Quick Start using Swift Package Manager
 
-## Quick Start
+Add a dependency on this repository to your `Package.swift`. Replace the version with the desired
+release.
 
-### 1. Configure your workspace to use `swift_toolbox`
-
-Add the following to your `WORKSPACE` file to add this repository and its dependencies.
-
-<!-- BEGIN WORKSPACE SNIPPET -->
-```python
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
-
-http_archive(
-    name = "cgrindel_swift_toolbox",
-    sha256 = "506d77f7adde108dbc3ca4e072a751576effc0c9162b76816d9f8968aea420aa",
-    strip_prefix = "swift_toolbox-0.3.1",
-    urls = [
-        "http://github.com/cgrindel/swift_toolbox/archive/v0.3.1.tar.gz",
-    ],
-)
+```swift
+  .package(url: "https://github.com/cgrindel/swift_toolbox", from: "0.4.0")
 ```
-<!-- END WORKSPACE SNIPPET -->
 
+## Quick Start using Bazel
+
+Use [rules_swift_package_manager](https://github.com/cgrindel/rules_swift_package_manager) to
+install this Swift package into your Bazel workspace.
+
+## Release Process
+
+Use the GitHub web interface to create a release and tag the repository.
