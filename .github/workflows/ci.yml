@@ -9,23 +9,26 @@ on:
 
 jobs:
   macos_build:
-    runs-on: macos-11.0
+    runs-on: macos-13.0
     steps:
     - uses: actions/checkout@v3
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: "14.3.1"
     - uses: cgrindel/gha_set_up_bazel@v1
       with:
         repo_name: swift_toolbox
-    - uses: ./.github/actions/build_and_test
+    - uses: ./.github/actions/tidy_and_test
 
   ubuntu_build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       CC: clang
     steps:
     - uses: cgrindel/gha_install_swift_on_ubuntu@v1
       with:
-        swift_release_tag: "swift-5.7.1-RELEASE"
-        ubuntu_version: "20.04"
+        swift_release_tag: "swift-5.8.1-RELEASE"
+        ubuntu_version: "22.04"
     - uses: actions/checkout@v3
     - uses: cgrindel/gha_set_up_bazel@v1
       with:
@@ -37,14 +40,16 @@ jobs:
         # Need to expose the PATH so that the Swift toolchain can be found
         build --action_env=PATH
         EOF
-    - uses: ./.github/actions/build_and_test
+    - uses: ./.github/actions/tidy_and_test
 
   all_ci_tests:
-    runs-on: ubuntu-20.04
-    needs: [macos_build, ubuntu_build]
+    runs-on: ubuntu-latest
+    needs:
+      - macos_build
+      - ubuntu_build
+    if: ${{ always() }}
     steps:
-      - name: All is Well
-        shell: bash
-        run: |
-          echo "All is well!"
+      - uses: cgrindel/gha_join_jobs@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
