@@ -1,11 +1,36 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_test")
 load("@cgrindel_bazel_starlib//bzlformat:defs.bzl", "bzlformat_pkg")
-load("//build/swift:swift_test.bzl", "swift_test")
+
+bzlformat_pkg(name = "bzlformat")
 
 swift_test(
     name = "TruthTests",
-    deps = [
-        "//Sources/Truth",
+    srcs = [
+        "AssertThatTests.swift",
+        "AssertionConsumerError.swift",
+        "BidirectionalCollectionAssertionsTests.swift",
+        "BinaryIntegerAssertionsTests.swift",
+        "BoolAssertionsTests.swift",
+        "CollectionAssertionsTests.swift",
+        "ComparableAssertionsTests.swift",
+        "DecimalAssertionsTests.swift",
+        "DictionaryAssertionsTests.swift",
+        "EquatableAssertionsTests.swift",
+        "ExpectFailureTests.swift",
+        "FailWithFactsTests.swift",
+        "FailureAssertionsTests.swift",
+        "FailureStrategyTests.swift",
+        "FloatingPointAssertionsTests.swift",
+        "KeySubjectTests.swift",
+        "NilAssertionsTests.swift",
+        "ResultAssertionsTests.swift",
+        "SequenceAssertionsTests.swift",
+        "StringAssertionsTests.swift",
+        "SubjectTests.swift",
+        "ThrowsAssertionsTests.swift",
+        "TypeAssertionsTests.swift",
+        "main.swift",
     ],
+    module_name = "TruthTests",
+    deps = ["//Sources/Truth"],
 )
-
-bzlformat_pkg(name = "bzlformat")

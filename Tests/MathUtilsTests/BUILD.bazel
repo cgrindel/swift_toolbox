@@ -1,12 +1,20 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_test")
 load("@cgrindel_bazel_starlib//bzlformat:defs.bzl", "bzlformat_pkg")
-load("//build/swift:swift_test.bzl", "swift_test")
+
+bzlformat_pkg(name = "bzlformat")
 
 swift_test(
     name = "MathUtilsTests",
+    srcs = [
+        "DecimalSequenceHelpersTests.swift",
+        "LinearModelTests.swift",
+        "OrderedPairProtocolTests.swift",
+        "OrderedPairTests.swift",
+        "main.swift",
+    ],
+    module_name = "MathUtilsTests",
     deps = [
         "//Sources/MathUtils",
-        "@cgrindel_swift_toolbox//Sources/Truth",
+        "//Sources/Truth",
     ],
 )
-
-bzlformat_pkg(name = "bzlformat")

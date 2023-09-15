@@ -1,10 +1,14 @@
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 load("@cgrindel_bazel_starlib//bzlformat:defs.bzl", "bzlformat_pkg")
-load("//build/swift:swift_library.bzl", "swift_library")
+
+bzlformat_pkg(name = "bzlformat")
 
 swift_library(
     name = "StructUtils",
+    srcs = [
+        "CopyWithable.swift",
+        "Withable.swift",
+    ],
     module_name = "StructUtils",
     visibility = ["//visibility:public"],
 )
-
-bzlformat_pkg(name = "bzlformat")
