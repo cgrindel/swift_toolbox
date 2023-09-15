@@ -8,12 +8,7 @@ runs:
       run: |
         bazelisk test //... 
 
-    - name: Build Anything Not Tested
+    - name: Ensure everything is tidy
       shell: bash
       run: |
-        bazelisk build //... 
-
-    - name: Ensure all packages have bzlformat checks
-      shell: bash
-      run: |
-        bazelisk run //:bzlformat_missing_pkgs_test
+        bazelisk run //:tidy_check
