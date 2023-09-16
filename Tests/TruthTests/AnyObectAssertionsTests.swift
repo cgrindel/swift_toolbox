@@ -23,4 +23,18 @@ class AnyObectAssertionsTests: XCTestCase {
       $0.that(actual).isIdenticalTo(expected)
     }
   }
+
+  func test_isNotIdenticalTo_WithDifferentObjs_Succeeds() throws {
+    let actual = Foo(name: "Jim")
+    let expected = Foo(name: "Jim")
+    assertNoFailures { $0.that(actual).isNotIdenticalTo(expected) }
+  }
+
+  func test_isNotIdenticalTo_WithIdenticalObjs_Fails() throws {
+    let actual = Foo(name: "Jim")
+    let expected = actual
+    assertFailure([Fact("expected not to be identical to", expected)]) {
+      $0.that(actual).isNotIdenticalTo(expected)
+    }
+  }
 }
