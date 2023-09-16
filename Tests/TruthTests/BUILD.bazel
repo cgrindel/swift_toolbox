@@ -6,6 +6,7 @@ bzlformat_pkg(name = "bzlformat")
 swift_test(
     name = "TruthTests",
     srcs = [
+        "AnyObectAssertionsTests.swift",
         "AssertThatTests.swift",
         "AssertionConsumerError.swift",
         "BidirectionalCollectionAssertionsTests.swift",
