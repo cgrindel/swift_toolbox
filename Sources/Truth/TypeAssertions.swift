@@ -1,15 +1,15 @@
 public extension Subject {
   /// Asserts that a subject is the specified type.
-  @discardableResult func isA<T>(
-    _ expectedType: T.Type,
+  @discardableResult func isA<ET>(
+    _ expectedType: ET.Type,
     file: StaticString = #file,
     line: UInt = #line,
-    _ subjectConsumer: (Subject<T>) throws -> Void = { _ in }
+    _ subjectConsumer: (Subject<ET>) throws -> Void = { _ in }
   ) -> Self {
     guard continueAssertions else {
       return self
     }
-    guard let expected = actual as? T else {
+    guard let expected = actual as? ET else {
       fail(
         file: file,
         line: line,
