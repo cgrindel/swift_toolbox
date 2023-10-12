@@ -1,11 +1,12 @@
-@testable import Truth
+// @testable import Truth
 import XCTest
 
 class AssertThatTests: XCTestCase {
   let target = "foo"
 
   func test_chuckDebug() throws {
-    fail("IMPLEMENT ME!")
+    // fail("IMPLEMENT ME!")
+    XCTFail("IMPLEMENT ME!")
   }
 
   // func test_assertThat_ForTargets() {

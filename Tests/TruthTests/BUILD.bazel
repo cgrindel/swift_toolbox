@@ -33,5 +33,5 @@ swift_test(
         "main.swift",
     ],
     module_name = "TruthTests",
-    deps = ["//Sources/Truth"],
+    # deps = ["//Sources/Truth"],
 )
