@@ -36,6 +36,8 @@
 #     # deps = ["//Sources/Truth"],
 # )
 
+# NOTE: This works without Truth.
+
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
 load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
 
@@ -47,7 +49,7 @@ swift_library(
     ],
     module_name = "TruthTests",
     tags = ["manual"],
-    # deps = ["//Sources/Truth"],
+    deps = ["//Sources/Truth"],
 )
 
 ios_unit_test(
