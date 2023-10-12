@@ -5,11 +5,17 @@ class AssertThatTests: XCTestCase {
   let target = "foo"
 
   func test_assertThat_ForTargets() {
+    // DEBUG BEGIN
+    fputs("*** CHUCK test_assertThat_ForTargets\n", stderr)
+    // DEBUG END
     let result = assertThat(target)
     XCTAssertEqual(result.actual, target)
   }
 
   func test_assertThat_WithCustomMessage() {
+    // DEBUG BEGIN
+    fputs("*** CHUCK test_assertThat_WithCustomMessage\n", stderr)
+    // DEBUG END
     let message = "Custom message."
     var result = assertThat(target, with: message)
     XCTAssertEqual(result.actual, target)
@@ -24,6 +30,9 @@ class AssertThatTests: XCTestCase {
   }
 
   func test_assertThat_WithConsumer() {
+    // DEBUG BEGIN
+    fputs("*** CHUCK test_assertThat_WithConsumer\n", stderr)
+    // DEBUG END
     let result = assertThat(target) {
       XCTAssertEqual($0.actual, target)
     }
@@ -31,6 +40,9 @@ class AssertThatTests: XCTestCase {
   }
 
   func test_assertThat_ForThrows() {
+    // DEBUG BEGIN
+    fputs("*** CHUCK test_assertThat_ForThrows\n", stderr)
+    // DEBUG END
     let result = assertThat { 1 == 1 }
     XCTAssertNotNil(result)
   }
