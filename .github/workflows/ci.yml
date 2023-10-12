@@ -27,7 +27,7 @@ jobs:
     steps:
     - uses: cgrindel/gha_install_swift_on_ubuntu@v1
       with:
-        swift_release_tag: "swift-5.8.1-RELEASE"
+        swift_release_tag: "swift-5.9-RELEASE"
         ubuntu_version: "22.04"
     - uses: actions/checkout@v3
     - uses: cgrindel/gha_set_up_bazel@v1
