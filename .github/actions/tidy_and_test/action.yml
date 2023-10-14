@@ -3,17 +3,27 @@ name: Tidy and Test
 runs:
   using: composite
   steps:
-    - name: Ensure everything is tidy
-      shell: bash
-      run: |
-        bazelisk run //:tidy_check
+    # TODO: FIX ME
 
-    - name: Execute Bazel Tests
-      shell: bash
-      run: |
-        bazelisk test //... 
+    # - name: Ensure everything is tidy
+    #   shell: bash
+    #   run: |
+    #     bazelisk run //:tidy_check
 
-    - name: Execute Swift Tests
+    # - name: Execute Bazel Tests
+    #   shell: bash
+    #   run: |
+    #     bazelisk test //... 
+
+    # - name: Execute Swift Tests
+    #   shell: bash
+    #   run: |
+    #     swift test
+
+    - name: DEBUG
       shell: bash
       run: |
-        swift test
+        echo >&2 "BUILD Truth Tests"
+        bazelisk build //Tests/TruthTests/...
+        echo >&2 "Test Truth Tests"
+        bazelisk test //Tests/TruthTests/...

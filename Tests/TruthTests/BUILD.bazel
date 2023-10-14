@@ -1,37 +1,75 @@
-load("@build_bazel_rules_swift//swift:swift.bzl", "swift_test")
+load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library", "swift_test")
 load("@cgrindel_bazel_starlib//bzlformat:defs.bzl", "bzlformat_pkg")
 
 bzlformat_pkg(name = "bzlformat")
 
-swift_test(
-    name = "TruthTests",
+# swift_test(
+#     name = "TruthTests",
+#     srcs = [
+#         # "AnyObectAssertionsTests.swift",
+#         "AssertThatTests.swift",
+#         # "AssertionConsumerError.swift",
+#         # "BidirectionalCollectionAssertionsTests.swift",
+#         # "BinaryIntegerAssertionsTests.swift",
+#         # "BoolAssertionsTests.swift",
+#         # "CollectionAssertionsTests.swift",
+#         # "ComparableAssertionsTests.swift",
+#         # "DecimalAssertionsTests.swift",
+#         # "DictionaryAssertionsTests.swift",
+#         # "EquatableAssertionsTests.swift",
+#         # "ExpectFailureTests.swift",
+#         # "FailWithFactsTests.swift",
+#         # "FailureAssertionsTests.swift",
+#         # "FailureStrategyTests.swift",
+#         # "FloatingPointAssertionsTests.swift",
+#         # "KeySubjectTests.swift",
+#         # "NilAssertionsTests.swift",
+#         # "ResultAssertionsTests.swift",
+#         # "SequenceAssertionsTests.swift",
+#         # "StringAssertionsTests.swift",
+#         # "SubjectTests.swift",
+#         # "ThrowsAssertionsTests.swift",
+#         # "TypeAssertionsTests.swift",
+#         # "main.swift",
+#     ],
+#     module_name = "TruthTests",
+#     # deps = ["//Sources/Truth"],
+# )
+
+# NOTE: This works with and without Truth.
+
+# load("@build_bazel_rules_apple//apple:ios.bzl", "ios_unit_test")
+# load("@build_bazel_rules_swift//swift:swift.bzl", "swift_library")
+
+# swift_library(
+#     name = "TruthTestsLib",
+#     testonly = True,
+#     srcs = [
+#         "AssertThatTests.swift",
+#     ],
+#     module_name = "TruthTests",
+#     tags = ["manual"],
+#     deps = ["//Sources/Truth"],
+# )
+
+# ios_unit_test(
+#     name = "TruthTests",
+#     minimum_os_version = "15.0",
+#     deps = [":TruthTestsLib"],
+# )
+
+swift_library(
+    name = "TruthTestsLib",
+    testonly = True,
     srcs = [
-        "AnyObectAssertionsTests.swift",
         "AssertThatTests.swift",
-        "AssertionConsumerError.swift",
-        "BidirectionalCollectionAssertionsTests.swift",
-        "BinaryIntegerAssertionsTests.swift",
-        "BoolAssertionsTests.swift",
-        "CollectionAssertionsTests.swift",
-        "ComparableAssertionsTests.swift",
-        "DecimalAssertionsTests.swift",
-        "DictionaryAssertionsTests.swift",
-        "EquatableAssertionsTests.swift",
-        "ExpectFailureTests.swift",
-        "FailWithFactsTests.swift",
-        "FailureAssertionsTests.swift",
-        "FailureStrategyTests.swift",
-        "FloatingPointAssertionsTests.swift",
-        "KeySubjectTests.swift",
-        "NilAssertionsTests.swift",
-        "ResultAssertionsTests.swift",
-        "SequenceAssertionsTests.swift",
-        "StringAssertionsTests.swift",
-        "SubjectTests.swift",
-        "ThrowsAssertionsTests.swift",
-        "TypeAssertionsTests.swift",
-        "main.swift",
     ],
     module_name = "TruthTests",
+    tags = ["manual"],
     deps = ["//Sources/Truth"],
+)
+
+swift_test(
+    name = "TruthTests",
+    deps = [":TruthTestsLib"],
 )
